@@ -26,22 +26,31 @@ nav {
     color: #fff;
 }
 
-#navbar li a:hover, 
-#navbar li a.active{
-    color:#17cf97;
+#navbar li a:hover{
+   background-color: #fff;
+   color: #1b2340;
+   border-radius: 4px;
+   padding: 5px;
+   transition: all 0.3s ease-in-out;
 }
 
-#navbar li a:hover::after, 
-#navbar li a.active::after {
+#navbar li a:hover::after{
     content: '';
-    width: 30%;
+    width: 40px;
     height: 2px;
-    background:#17cf97;
+    background:#fff;
     position:absolute;
-    bottom: -4px;
-    left: 20px;
+    bottom: -7px;
+    left: 21px;
+    transition: all 3000s ease-in-out;
 }
-/* logo del menu mobile */
+/* estilo de iconos navbar */
+.icon{
+    list-style: none;
+    padding: 0 10px;
+    position: relative;
+}
+/* menu del navbar mobile */
 #mobile {
     display: none;
 
@@ -51,7 +60,7 @@ nav {
     align-items: center;
 }
 /* navbar responsive */
-@media screen and (max-width: 769px){
+@media screen and (max-width: 855px){
     #navbar{
         display: flex;
         flex-direction: column;
