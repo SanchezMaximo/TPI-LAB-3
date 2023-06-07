@@ -30,7 +30,7 @@ nav {
    background-color: #fff;
    color: #1b2340;
    border-radius: 4px;
-   padding: 5px;
+   padding: 5px 9px 5px 0px; 
    transition: all 0.3s ease-in-out;
 }
 

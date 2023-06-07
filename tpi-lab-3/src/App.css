@@ -3,7 +3,9 @@
   padding:0;
   box-sizing: border-box;
 }
-
+body{
+  background-color: #344;
+}
 .App {
   text-align: center;
   font-family: sans-serif;

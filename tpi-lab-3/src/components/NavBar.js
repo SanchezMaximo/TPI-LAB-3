@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { MenuItems } from './MenuItems';
 import "./NavBar.css"
 
 
@@ -19,10 +20,16 @@ const NavBar = () => {
         <div>
             {/* si el collapsed es true muestra el navbar mobile */}
             <ul id="navbar" className={collapsed ? ("#navbar active"):("#navbar")}>
-                <li><a href='/'><i class="icon fa-solid fa-house-user"></i>Home</a></li>
-                <li><a href='/'><i class="icon fa-solid fa-mug-hot"></i>Products</a></li>
-                <li><a href='/'><i class="icon fa-solid fa-circle-info"></i>About</a></li>
-                <li><a href='/'><i class="icon fa-solid fa-address-book"></i>Contact</a></li>
+                {MenuItems.map((item,index) => {
+                    return (
+                        <li key={index}>
+                            <a href='/'>
+                                <i className={item.icon}></i>
+                                {item.title}
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
         {/* cambio de logo del navbar */}
@@ -35,3 +42,4 @@ const NavBar = () => {
 }
 
 export default NavBar
+
