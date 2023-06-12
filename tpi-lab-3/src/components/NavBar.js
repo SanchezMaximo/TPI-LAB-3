@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { MenuItems } from './MenuItems';
 import "./NavBar.css"
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -22,11 +23,11 @@ const NavBar = () => {
             <ul id="navbar" className={collapsed ? ("#navbar active"):("#navbar")}>
                 {MenuItems.map((item,index) => {
                     return (
-                        <li key={index}>
-                            <a href='/'>
+                        <li key={index + item}>
+                            <Link  to={item.url}>
                                 <i className={item.icon}></i>
                                 {item.title}
-                            </a>
+                            </Link>
                         </li>
                     );
                 })}
