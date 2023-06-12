@@ -7,6 +7,10 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
   const emailRef = useRef(null);
   const passRef = useRef(null);

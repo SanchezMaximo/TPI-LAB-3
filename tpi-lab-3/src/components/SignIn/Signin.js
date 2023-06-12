@@ -1,15 +1,18 @@
 import React, { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import useAuth from "../context/authContext.js";
 import "react-toastify/dist/ReactToastify.css";
-
 import "../Login/Login.css";
-//FALTA CONECTARLO A UN BACK END PARA HCER UNA VERIFICACION DE USUARIO
+
 const SigIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
+  const { signup } = useAuth();
+
   const emailRef = useRef(null);
   const passRef = useRef(null);
+
   //NOTIFICACIONES DE ERROR
   const notify = () => toast.error("Email No puede estar vacio");
   const notify2 = () => toast.error("Password No puede estar vacio");
@@ -43,7 +46,7 @@ const SigIn = () => {
       notify2();
       return;
     }
-
+    signup(email, pass);
     Bienvenida();
   };
 
@@ -55,7 +58,7 @@ const SigIn = () => {
           <input
             className="input-control"
             onChange={emailChangedHandler}
-            placeholder="Email"
+            name="email"
             type="email"
             value={email}
             ref={emailRef}
@@ -65,7 +68,7 @@ const SigIn = () => {
           <input
             className="input-control"
             onChange={passwordChangedHandler}
-            placeholder="Password"
+            name="password"
             type="password"
             value={pass}
             ref={passRef}
@@ -84,7 +87,7 @@ const SigIn = () => {
           theme="colored"
         />
         <button className="signin-button" onClick={signInClicked} type="button">
-          Iniciar sesión
+          Sign Up
         </button>
       </div>
     </div>
