@@ -41,5 +41,46 @@
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 2px;
-    color: #222;
+    color: #87481d;
+
+}
+.homePage-text .show:hover{
+    background-color: #87481d;
+    color: #fff;
+ }
+
+@media screen and (max-width: 920px) {
+    .homePage-text {
+        position: absolute;
+        text-align: center;
+        padding: 3px;
+        top:20%;
+        transition: 1s ease-in-out;
+    }
+    .homePage-text h1{
+        font-size: 2rem;   
+        background: #87481d;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0.4px 1px 0px #fff;
+    }
+    .homePage-text p{
+        font-size: 1.2rem;
+        background: #fff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+ 
+    } 
+    .homePage-text .show{
+        padding: 0.4rem 1.1rem;
+        border-radius: 6px;
+        font-size: 0.9rem ;
+        letter-spacing: 1px;
+        background: #fff;
+        color: #87481d;
+    }
+    .homePage-text .show:hover{
+        background-color: #87481d;
+        color: #fff;
+     }
 }
