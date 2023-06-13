@@ -44,6 +44,26 @@ nav {
     left: 21px;
     transition: all 3000s ease-in-out;
 }
+
+button{
+    list-style: none;
+    margin-left: 20px;
+    padding: 1px 20px;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border-color: #fff;
+    font-size: 1.1rem;
+    color: #fff;
+    background:#87481d;
+}
+
+button:hover{
+    background:#fff;
+    color: #1b2340;
+    transition: all 0.3s ease-in-out;
+}
 /* estilo de iconos navbar */
 .icon{
     list-style: none;
@@ -83,7 +103,7 @@ nav {
         z-index: 1;
         transition: 0.2s ease-in-out;
     }
-    #navbar li{
+    #navbar.active li{
         margin-bottom: 25px;
     }
 
@@ -94,5 +114,15 @@ nav {
     #mobile i{
         font-size: 24px;
         cursor: pointer;
+    }
+    
+    button{
+        margin: 10px 0px 0px 45px;
+        background: #2a3239;
+    }
+    button:hover{
+        background:#fff;
+        color: #1b2340;
+        transition: all 0.3s ease-in-out;
     }
 }

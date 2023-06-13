@@ -50,7 +50,7 @@ const SigIn = () => {
           value={pass}
           onChange={passwordChangedHandler}
         />
-        <button className="login-button">Sign Un</button>
+        <button className="login-button">Sign In</button>
       </form>
       <ToastContainer />
     </div>

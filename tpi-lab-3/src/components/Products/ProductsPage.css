@@ -3,6 +3,7 @@
     height: 70vh;
     position: relative;
 }
+
 .imgClass{
     width: 100%;
     height: 100%;
@@ -11,8 +12,8 @@
 
 .ProductsPage-text{
     position: absolute;
-    top: 29%;
-    left: 3%;
+    top: 10%;
+    left: 77%;
     text-align: center;
 }
 
