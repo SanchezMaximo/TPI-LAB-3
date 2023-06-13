@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import HomePage from '../components/HomePage'
+import NavBar from '../components/Navbar/NavBar'
+import HomePage from '../components/HomePage/HomePage'
 
 const Home = () => {
   return (

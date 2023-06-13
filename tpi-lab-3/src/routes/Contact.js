@@ -1,11 +1,17 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
+import React from 'react';
+import NavBar from '../components/Navbar/NavBar';
+import ContactPage from '../components/Contact/ContactPage';
 
 const Contact = () => {
   return (
   <div>
     <NavBar/>
-    <h1>contact</h1>
+    <ContactPage 
+    cName="contactPageMid"
+    imgClass="imgClass"
+    aboutImg="img/coffee.jpg"
+    title="Contact"
+    />
   </div>
   )
 }
