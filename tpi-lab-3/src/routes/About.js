@@ -7,7 +7,7 @@ const About = () => {
   <div>
     <NavBar/>
     <AboutPage 
-    cName="aboutPageMid"
+    aboutPageMid="aboutPageMid"
     imgClass="imgClass"
     aboutImg="img/coffee.jpg"
     title="About"

@@ -1,4 +1,4 @@
-.aboutPageMid{
+.ProductsPageMid{
     width: 100%;
     height: 70vh;
     position: relative;
@@ -9,39 +9,28 @@
     object-fit: cover;
 }
 
-.aboutPage-text {
+.ProductsPage-text{
     position: absolute;
-    top: 31%;
+    top: 29%;
     left: 3%;
     text-align: center;
 }
 
-.aboutPage-text h1{
+.ProductsPage-text h2{
     font-size: 3rem;
-    background: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.aboutPage-text h3{
-    font-size: 2rem;
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 920px) {
-    .aboutPage-text {
+    .ProductsPage-text{
         text-align: center;
-        top:29%;
+        top: 16%;
+        left: 50%;
     }
-    .aboutPage-text h1{
+    .ProductsPage-text h2{
         font-size: 2rem;   
-        background: #fff;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .aboutPage-text h3{
-        font-size: 1rem;   
         background: #fff;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;

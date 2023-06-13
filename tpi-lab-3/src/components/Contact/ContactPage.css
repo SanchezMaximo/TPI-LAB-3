@@ -11,30 +11,56 @@
 
 .contactPage-text{
     position: absolute;
-    top: 30%;
-    left: 4%;
+    top: 12%;
+    left: 52%;
     text-align: center;
 }
 
-.contactPage-text h1{
+.contactPage-text h2{
     font-size: 3rem;
-    font-weight: 800;
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.contactPage-text h3{
+    font-size: 2rem;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contactPage-text p{
+    font-size: 1.5rem;  
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 @media screen and (max-width: 920px) {
     .contactPage-text{
         text-align: center;
-        
+        top: 16%;
+        left: 50%;
     }
-    .contactPage-text h1{
+    .contactPage-text h2{
         font-size: 2rem;   
-        background: #87481d;
+        background: #fff;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: 0.4px 1px 0px #fff;
+    }
+    .contactPage-text h3{
+        font-size: 1rem;   
+        background: #fff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .contactPage-text p{
+        padding: 0px;
+        font-size: 0.9rem;
+        background: #fff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
