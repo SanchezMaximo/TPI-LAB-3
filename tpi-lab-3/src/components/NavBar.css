@@ -2,7 +2,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1b2340;
+    background-color: #87481d;
     padding: 20px 80px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 }
@@ -74,11 +74,14 @@ nav {
         background: #2a3239;
         box-shadow: 0 40px 60px rgba(0,0,0,0.1);
         padding: 40px 0 0 10px;
+        z-index: -1;
         transition: 0.3s ease-in-out;
     }
 
     #navbar.active{
         right: 0px;
+        z-index: 1;
+        transition: 0.2s ease-in-out;
     }
     #navbar li{
         margin-bottom: 25px;
