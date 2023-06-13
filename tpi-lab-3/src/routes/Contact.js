@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import NavBar from '../components/Navbar/NavBar';
 import ContactPage from '../components/Contact/ContactPage';
@@ -15,5 +16,16 @@ const Contact = () => {
   </div>
   )
 }
+=======
+import React from "react";
 
-export default Contact
+const Contact = () => {
+  return (
+    <div>
+      <h1>contact</h1>
+    </div>
+  );
+};
+>>>>>>> f59394192ad384859281c9b0724867b4af994cd5
+
+export default Contact;

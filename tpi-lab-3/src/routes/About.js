@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import NavBar from '../components/Navbar/NavBar';
 import AboutPage from '../components/About/AboutPage';
@@ -16,5 +17,16 @@ const About = () => {
   </div>
   )
 }
+=======
+import React from "react";
 
-export default About
+const About = () => {
+  return (
+    <div>
+      <h1>about</h1>
+    </div>
+  );
+};
+>>>>>>> f59394192ad384859281c9b0724867b4af994cd5
+
+export default About;
