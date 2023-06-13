@@ -1,0 +1,45 @@
+.homePage{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imgClass{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homePage-text {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    text-align: center;
+}
+
+.homePage-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.homePage-text p{
+    font-size: 1.3rem;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5rem 0 2rem 0;
+}
+
+.homePage-text .show{
+    text-decoration: none;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #222;
+}

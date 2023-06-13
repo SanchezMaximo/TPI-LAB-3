@@ -1,95 +1,58 @@
 import React, { useState, useRef } from "react";
+import { useAuth } from "../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
-import useAuth from "../context/authContext.js";
 import "react-toastify/dist/ReactToastify.css";
-import "../Login/Login.css";
+import "./Signin.css";
+import { useNavigate } from "react-router-dom";
 
 const SigIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   const { signup } = useAuth();
+  const navigate = useNavigate();
 
-  const emailRef = useRef(null);
-  const passRef = useRef(null);
-
-  //NOTIFICACIONES DE ERROR
-  const notify = () => toast.error("Email No puede estar vacio");
-  const notify2 = () => toast.error("Password No puede estar vacio");
-  const Bienvenida = () => toast.success("Los datos han sido registrados");
-  //Handler de email que se activa con onChange
   const emailChangedHandler = (event) => {
-    emailRef.current.style.borderColor = "";
-    emailRef.current.style.outline = "";
     setEmail(event.target.value);
   };
-  //Handler de password que se activa con onChange
+
   const passwordChangedHandler = (event) => {
-    passRef.current.style.borderColor = "";
-    passRef.current.style.outline = "";
     setPass(event.target.value);
   };
-  //Boton onClick que evalua errores, si no estan vacios (y futuramente verifica si existe el usuario) crea el usuario
-  const signInClicked = () => {
-    if (emailRef.current.value.length === 0) {
-      emailRef.current.focus();
-      emailRef.current.style.borderColor = "red";
-      emailRef.current.style.outline = "none";
-      notify();
-      return;
-    }
 
-    if (pass.length === 0) {
-      passRef.current.focus();
-      passRef.current.style.borderColor = "red";
-      passRef.current.style.outline = "none";
-      notify2();
-      return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signup(email, pass);
+      navigate("/");
+    } catch (errors) {
+      toast.error(errors.code);
     }
-    signup(email, pass);
-    Bienvenida();
   };
-
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h4>Bienvenido a Coffee Shop</h4>
-        <div className="input-container">
-          <input
-            className="input-control"
-            onChange={emailChangedHandler}
-            name="email"
-            type="email"
-            value={email}
-            ref={emailRef}
-          />
-        </div>
-        <div className="input-container">
-          <input
-            className="input-control"
-            onChange={passwordChangedHandler}
-            name="password"
-            type="password"
-            value={pass}
-            ref={passRef}
-          />
-        </div>
-        <ToastContainer
-          position="top-left"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
+    <div>
+      <form className="login-container" onSubmit={handleSubmit}>
+        <h1>SIGN UP</h1>
+        <h3 className="login-label">Email </h3>
+        <input
+          className="login-input"
+          type="text"
+          placeholder="example@example.as"
+          name="email"
+          value={email}
+          onChange={emailChangedHandler}
         />
-        <button className="signin-button" onClick={signInClicked} type="button">
-          Sign Up
-        </button>
-      </div>
+        <h3 className="login-label">Password </h3>
+        <input
+          className="login-input"
+          type="password"
+          placeholder="password"
+          name="password"
+          value={pass}
+          onChange={passwordChangedHandler}
+        />
+        <button className="login-button">Sign Un</button>
+      </form>
+      <ToastContainer />
     </div>
   );
 };
