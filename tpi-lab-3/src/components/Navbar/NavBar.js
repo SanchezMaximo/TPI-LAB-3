@@ -5,7 +5,7 @@ import "./NavBar.css"
 import { Link } from 'react-router-dom';
 
 
-const NavBar = ({ children }) => {
+const NavBar = () => {
   const [collapsed, setCollapsed] = useState(false);
   //arrow function para cambiar el estado del navbar
   const handleClick = () => {
@@ -40,7 +40,6 @@ const NavBar = ({ children }) => {
           ></i>
         </div>
       </nav>
-      {children}
     </>
   );
 };
