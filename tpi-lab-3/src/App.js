@@ -4,7 +4,6 @@ import Products from "./routes/Products";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
 import "./App.css";
-import NavBar from "./components/NavBar";
 import SigIn from "./components/SignIn/Signin";
 import LogIn from "./components/Login/Login";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";

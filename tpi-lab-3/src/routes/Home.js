@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import React from 'react'
-import NavBar from '../components/Navbar/NavBar'
-import HomePage from '../components/HomePage/HomePage'
-=======
-import React from "react";
-import HomePage from "../components/HomePage";
->>>>>>> f59394192ad384859281c9b0724867b4af994cd5
+import HomePage from '../components/HomePage/HomePage';
+import NavBar from '../components/Navbar/NavBar';
 
 const Home = () => {
   return (
     <div>
+      <NavBar />
       <HomePage
         cName="homePage"
         imgClass="imgClass"

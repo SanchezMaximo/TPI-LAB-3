@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React from 'react'
-import NavBar from '../components/Navbar/NavBar'
-=======
-import React from "react";
->>>>>>> f59394192ad384859281c9b0724867b4af994cd5
 
 const Products = () => {
   return (

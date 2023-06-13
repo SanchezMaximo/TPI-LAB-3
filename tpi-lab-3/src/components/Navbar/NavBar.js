@@ -1,17 +1,9 @@
-<<<<<<< HEAD:tpi-lab-3/src/components/Navbar/NavBar.js
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
 import { MenuItems } from '../MenuItems';
 import "./NavBar.css"
 import { Link } from 'react-router-dom';
 
-
-const NavBar = () => {
-=======
-import React, { useState } from "react";
-import { MenuItems } from "./MenuItems";
-import "./NavBar.css";
-import { Link } from "react-router-dom";
->>>>>>> f59394192ad384859281c9b0724867b4af994cd5:tpi-lab-3/src/components/NavBar.js
 
 const NavBar = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -19,7 +11,6 @@ const NavBar = ({ children }) => {
   const handleClick = () => {
     setCollapsed(!collapsed);
   };
-
   return (
     <>
       <nav>
