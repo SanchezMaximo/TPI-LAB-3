@@ -37,7 +37,7 @@ const NavBar = (props) => {
                 </li>
               );
             })}
-            <button onClick={handleLogout}>Log Out</button>
+            <button className="buttonLogout"onClick={handleLogout}>Log Out</button>
           </ul>
         </div>
         {/* cambio de logo del navbar */}

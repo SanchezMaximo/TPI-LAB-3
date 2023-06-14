@@ -1,19 +1,75 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {CartContext} from "../context/ShoppingCartProvider";
+
 import "./ProductsCard.css";
 
-const ProductsCard = () => {
-  return (
-    <div className='container'>
-        <div className='menu'> 
-            <img alt='croissant' src='https://images.unsplash.com/photo-1599940778173-e276d4acb2bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1755&q=80' className='foodClass'></img>
-            <div className='infoProduct'>
-                <h4>nombre del producto</h4>
-                <p>descripcion del producto</p>
-                <p>precio del producto</p>
-                <button>add to cart</button>
-            </div>
-        </div>      
-    </div>
+
+const ProductsCard = ({ name, price, id, imgUrl }) => {
+    
+    const [cart, setCart] = useContext(CartContext);
+
+    const addToCart = () => {
+        setCart((currentItem)=> {
+           const isItemsFound = currentItem.find((item) => item.id === id);
+           if(isItemsFound){
+                return currentItem.map((item) => {
+                    if(item.id === id){
+                        return {...item, quantity: item.quantity + 1};
+                    } else {
+                        return item;
+                    }
+                });
+           } else {
+                return [...currentItem, {id , quantity: 1, price }]
+           }
+        });
+    };
+
+    const removeItem = (id) => {
+        setCart((currentItem) => {
+            if(currentItem.find((item) => item.id === id)?.quantity === 1){
+                return currentItem.filter((item) => item.id !== id);
+            } else {
+                return currentItem.map((item)=> {
+                    if (item.id === id){
+                        return {...item, quantity: item.quantity - 1};
+                    } else {
+                        return item;
+                    }
+                });
+            }
+        });
+    }; 
+
+    const getQuantityById = (id) => {
+        return cart.find((item) => item.id === id)?.quantity || 0;
+    };
+
+    const quantityPerItem = getQuantityById(id);
+     
+    return (
+   <div className="productsCard">
+        {
+            quantityPerItem > 0 && (
+                <div className='item-quantity'>{quantityPerItem}</div>
+            )
+        }
+        <div>{name}</div> 
+        <img src={imgUrl} alt='food' width="250" height="300" />
+        <div className='productPrice'>${price}</div>
+       {
+            quantityPerItem === 0 ? (
+                <button className="productAddButton" onClick={() => addToCart() }>+ add to cart</button>
+            ) : (
+                <button className="productPlusButton" onClick={() => addToCart() }>+ add to more</button>
+            )
+       }
+       {
+        quantityPerItem > 0 && (
+            <button className="productMinusButton" onClick={() => removeItem(id) }>subtract item</button>
+        )
+       }
+   </div>
 )
 }
 

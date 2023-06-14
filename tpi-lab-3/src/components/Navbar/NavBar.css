@@ -45,7 +45,7 @@ nav {
     transition: all 3000s ease-in-out;
 }
 
-button{
+.buttonLogout{
     list-style: none;
     margin-left: 20px;
     padding: 1px 20px;
@@ -59,7 +59,7 @@ button{
     background:#87481d;
 }
 
-button:hover{
+.buttonLogout:hover{
     background:#fff;
     color: #1b2340;
     transition: all 0.3s ease-in-out;
@@ -116,11 +116,11 @@ button:hover{
         cursor: pointer;
     }
     
-    button{
+    .buttonLogout{
         margin: 10px 0px 0px 45px;
         background: #2a3239;
     }
-    button:hover{
+    .buttonLogout:hover{
         background:#fff;
         color: #1b2340;
         transition: all 0.3s ease-in-out;

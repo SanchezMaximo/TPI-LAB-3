@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name": "croissant",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1600521853186-93b88b3a07b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id":2,
+        "name": "cake",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+    },
+    {
+        "id":3,
+        "name": "sandwich",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+    },
+    {
+        "id":4,
+        "name": "cup cake",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+    },
+    {
+        "id":5,
+        "name": "roll de canela",
+        "price": 100,
+        "imgUrl": "https://plus.unsplash.com/premium_photo-1675871810360-932ba768e5db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+    },
+    {
+        "id":6,
+        "name": "danesa",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id":7,
+        "name": "focaccia",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1619452357216-e88ca8119eeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id":8,
+        "name": "cookie",
+        "price": 100,
+        "imgUrl": "https://images.unsplash.com/photo-1625876981820-be17a6807189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    }
+]

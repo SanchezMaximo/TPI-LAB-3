@@ -1,17 +1,69 @@
-.container{
-    background: rgb(143, 143, 217);
-    margin-top: 5px;
-}
-.foodClass{
-    width: 30%;
-    height: 30%;  
+.productsCard{
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    width: 110;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-.menu{
-    margin:10px 0px 20px 20px;
-    padding: 10px 10px;
-    display: flexbox;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
+.productPrice {
+    color: gray;
+}
+
+.productAddButton {
+    background-color: #5cb85c;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+.productAddButton:hover{
+    background-color: #428342;
+    color:#fff;
+}
+
+.item-quantity {
+  color: #fff;
+  background-color: #87481d;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  max-width: 30px;
+  position:relative;
+  left: 105px;
+  margin: 5px;
+}
+
+.productPlusButton{
+    background-color: #337ab7;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position:relative;
+    margin: 5px;
+    left: 70px;
+    padding: 4px;
+}
+
+.productMinusButton{
+    background-color: #d9534f;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position:relative;
+    margin: 5px;
+    left: 70px;
+    padding: 4px 7px;
 }
