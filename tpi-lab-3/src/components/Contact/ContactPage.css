@@ -30,12 +30,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.contactPage-text p{
-    font-size: 1.5rem;  
-    background: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
 
 @media screen and (max-width: 920px) {
     .contactPage-text{
@@ -55,12 +50,5 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    
-    .contactPage-text p{
-        padding: 0px;
-        font-size: 0.9rem;
-        background: #fff;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+ 
 }

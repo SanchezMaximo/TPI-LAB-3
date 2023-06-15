@@ -1,8 +1,24 @@
 .contactBody{
     color: #fff;
-    display: flexbox;
+    border-color: black;
+    border-style: double;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    margin: 10px;
+    align-items: center;
 } 
+.infoContact{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hours{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 

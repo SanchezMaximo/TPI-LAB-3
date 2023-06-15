@@ -2,26 +2,22 @@ import React from 'react';
 import "./ContactBody.css";
 
 const ContactBody = () => {
+
   return (
     <div className='contactBody'>
-        <div className='phone'>
-            <h3>Phone</h3>
-            <p>(212)208-3894</p>
-        </div>
-        <div className='location'>
-            <h3>Location</h3>
-            <p>301 Bernabeu Street</p>
-            <p>Madrid 1812 - Rosario</p>
-        </div>
+        <h2>Contact Us</h2>
+        <div className='infoContact'>
+        <h4>Phone</h4>
+        <p>(212)9427</p>
+        <h4>Location</h4>
+        <p>Ashton New Rd, Manchester M11 3FF, Reino Unido</p>
         <div className='hours'>
-            <h3>Hours</h3>
-            <h4>Weekdays</h4>
+            <h4>Hours</h4>
+            <h5>Weekdays</h5>
             <p>7AM - 6PM</p>
-            <h4>Weekends</h4>
+            <h5>Weekends</h5>
             <p>8AM - 5PM</p>
         </div>
-        <div>
-            <p>Questions, comments, secret love notes? We'd love to hear from you. Please email us at hello@coffee&bakery.com</p>
         </div>
     </div>
   )
