@@ -17,12 +17,14 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
   const signup = async (email, password) => {
     await createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
+    setUsername(user.email);
   };
 
   const logout = () => signOut(auth);
@@ -34,7 +36,9 @@ export function AuthProvider({ children }) {
     });
   }, []);
   return (
-    <authContext.Provider value={{ signup, login, logout, user, loading }}>
+    <authContext.Provider
+      value={{ signup, login, logout, user, username, loading }}
+    >
       {children}
     </authContext.Provider>
   );

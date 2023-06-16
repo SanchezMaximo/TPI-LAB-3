@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signin.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SigIn = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,7 @@ const SigIn = () => {
     }
   };
   return (
-    <div>
+    <div className="login-container">
       <form className="login-container" onSubmit={handleSubmit}>
         <h1>SIGN UP</h1>
         <h3 className="login-label">Email </h3>
@@ -52,7 +53,20 @@ const SigIn = () => {
         />
         <button className="login-button">Sign In</button>
       </form>
-      <ToastContainer />
+      <p>Already have an accout?</p>
+      <Link to="/login">Click here to login</Link>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

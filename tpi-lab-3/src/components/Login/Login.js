@@ -3,6 +3,7 @@ import { useAuth } from "../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "../SignIn/Signin.css";
 
@@ -24,7 +25,7 @@ const LogIn = () => {
     e.preventDefault();
     try {
       await login(email, pass);
-      navigate("/");
+      navigate("/products");
     } catch (errors) {
       toast.error(errors.code);
     }
@@ -54,6 +55,8 @@ const LogIn = () => {
         />
         <button className="login-button">Log In</button>
       </form>
+      <p>Don't have an account?</p>
+      <Link to="/signup">Click here to Sign Up</Link>
       <ToastContainer
         position="top-right"
         autoClose={5000}

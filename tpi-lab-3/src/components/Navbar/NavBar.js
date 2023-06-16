@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import { useAuth } from "../context/authContext";
-
-import { MenuItems } from '../MenuItems';
-import "./NavBar.css"
-import { Link } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import { MenuItems } from "../MenuItems";
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const { logout, user, username } = useAuth();
   //arrow function para cambiar el estado del navbar
   const handleClick = () => {
     setCollapsed(!collapsed);
   };
-  //log in log out
-  const { logout } = useAuth();
 
   const handleLogout = async () => {
     await logout();
@@ -37,7 +36,32 @@ const NavBar = (props) => {
                 </li>
               );
             })}
-            <button className="buttonLogout"onClick={handleLogout}>Log Out</button>
+            {user != null ? (
+              <>
+                <p>
+                  Welcome
+                  <br /> {username}
+                </p>
+                <button className="buttonLogout" onClick={handleLogout}>
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <div>
+                <li
+                  className="buttonLogout fa-solid fa-right-to-bracket"
+                  onClick={() => navigate("/login")}
+                >
+                  Log in
+                </li>
+                <li
+                  className="buttonLogout fa-solid fa-right-to-bracket"
+                  onClick={() => navigate("/signup")}
+                >
+                  Sign Up
+                </li>
+              </div>
+            )}
           </ul>
         </div>
         {/* cambio de logo del navbar */}
