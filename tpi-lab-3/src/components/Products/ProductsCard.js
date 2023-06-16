@@ -20,7 +20,7 @@ const ProductsCard = ({ name, price, id, imgUrl }) => {
                     }
                 });
            } else {
-                return [...currentItem, {id , quantity: 1, price }]
+                return [...currentItem, {id ,name, quantity: 1, price }]
            }
         });
     };
