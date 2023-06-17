@@ -16,12 +16,13 @@ const ShoppingCart = () => {
   },0);
 
   const name = cart.reduce((acum, current) => {
-    if(quantity > 1){
-      return acum  + " " + current.name;
+    if(quantity > 1){ 
+      return acum + " " + current.name ;
     } else {
-      return acum + current.name;
+      return acum + current.name ;
     }
   },[]);
+
 
   //para mostrar card 
   const [show, setShow] = useState(false);
@@ -34,15 +35,30 @@ const ShoppingCart = () => {
     <>
       <NavBar />
       <div className="cartContainer">
-      <div>Products: <p>{name}</p> </div>
       <div>Items in cart : {quantity}</div>
-      <div>Total : ${totalPrice}</div>
       <button className="checkout" onClick={handleCheckout}>Checkout</button>
-      {/* <div className={show ? "showCard" : "noShowCard"}>
-            <div>{name}</div>
-            <div>{quantity}</div>
-            <div>${totalPrice}</div>
-      </div> */}
+      <div className={show ? "showCard" : "noShowCard"}>
+      </div>
+      {
+        quantity > 1 && show &&(
+          <div>
+            <div>Products:</div>
+            <br></br>
+            <p className='productsCart'>{name}</p>
+            <br></br>
+            <div>Total : ${totalPrice}</div>
+          </div>
+        ) 
+      }
+      {
+        quantity === 1 && show &&(
+          <div>
+            <div>Product: <br></br>{name}</div>
+            <br></br>
+            <div>Total : ${totalPrice}</div>
+          </div>
+        ) 
+      }
       </div>
     </>
   )

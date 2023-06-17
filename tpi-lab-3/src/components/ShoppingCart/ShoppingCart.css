@@ -23,3 +23,12 @@
 .cartContainer .showCard {
   background: blue;
 }
+.productsCart{
+  padding: 3px;
+  text-align: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  border-color: black;
+  border-style: solid;
+  color: black;
+}
