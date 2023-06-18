@@ -15,14 +15,6 @@ const ShoppingCart = () => {
     return acum + current.quantity * current.price;
   }, 0);
 
-  const name = cart.reduce((acum, current) => {
-    if (quantity > 1) {
-      return acum + " " + current.name;
-    } else {
-      return acum + current.name;
-    }
-  }, []);
-
   //para mostrar card
   const [show, setShow] = useState(false);
 
@@ -35,33 +27,33 @@ const ShoppingCart = () => {
       <NavBar />
       <div className="cartContainer">
         <div>Items in cart : {quantity}</div>
-        <button className="checkout" onClick={handleCheckout}>
+        <button className="btn-checkout" onClick={handleCheckout}>
           Checkout
         </button>
-        <div className={show ? "showCard" : "noShowCard"}></div>
-        {quantity > 1 && show && (
-          <div>
-            <div>Products:</div>
-            <br />
-            <div className="productsCart">
-              {cart.map((product) => (
-                <p key={product.id}>{product.name}</p>
-              ))}
-            </div>
-            <br />
-            <div>Total : ${totalPrice}</div>
-          </div>
-        )}
-        {quantity === 1 && show && (
-          <div>
-            <div>
-              Product: <br />
-              {name}
-            </div>
-            <br />
-            <div>Total : ${totalPrice}</div>
-          </div>
-        )}
+        <div className={show ? "showCard" : "noShowCard"}>
+            {quantity === 0 && !show && (
+              <div className="noShowCard">
+              <p>Opps! There are no products in the cart.</p>
+              </div>
+            )} 
+            
+            {quantity >= 1 && show && (
+              <div className="showCheck">
+                <div>
+                  {cart.map((product) => (
+                    <p key={product.id}>{product.name}
+                    <br></br>
+                    selected amount: {product.quantity}
+                    <br></br>
+                    price per unit: ${product.price}
+                    </p>
+                  ))}
+                </div>
+                <div>Total : ${totalPrice}</div>
+              </div>
+            )}
+
+        </div>
       </div>
     </>
   );
