@@ -25,9 +25,23 @@
 
 .showCard .showCheck{
   display: flexbox;
-  padding: 3px;
+  padding: 30px;
   text-align: center;
   justify-content: center;
-  background: rgb(200, 163, 116);
+  background: #dec39f;
   color: black;
+  border-style: solid;
+  border-radius: 6px;
+}
+.showCard{
+  display:flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.total{
+  border-style: solid;
+  border-radius: 6px;
+  margin: 3px;
+  padding: 3px;
 }
