@@ -1,76 +1,81 @@
-import React, { useContext } from 'react';
-import {CartContext} from "../context/ShoppingCartProvider";
+import React, { useContext } from "react";
+import { CartContext } from "../context/ShoppingCartProvider";
 
 import "./ProductsCard.css";
+import { useAuth } from "../context/authContext";
 
+const ProductsCard = ({ name, price, id, imgUrl, unlistItem }) => {
+  const { user } = useAuth();
+  const [cart, setCart] = useContext(CartContext);
 
-const ProductsCard = ({ name, price, id, imgUrl }) => {
-    
-    const [cart, setCart] = useContext(CartContext);
-
-    const addToCart = () => {
-        setCart((currentItem)=> {
-           const isItemsFound = currentItem.find((item) => item.id === id);
-           if(isItemsFound){
-                return currentItem.map((item) => {
-                    if(item.id === id){
-                        return {...item, quantity: item.quantity + 1};
-                    } else {
-                        return item;
-                    }
-                });
-           } else {
-                return [...currentItem, {id ,name, quantity: 1, price }]
-           }
+  const addToCart = () => {
+    setCart((currentItem) => {
+      const isItemsFound = currentItem.find((item) => item.id === id);
+      if (isItemsFound) {
+        return currentItem.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
         });
-    };
+      } else {
+        return [...currentItem, { id, name, quantity: 1, price }];
+      }
+    });
+  };
 
-    const removeItem = (id) => {
-        setCart((currentItem) => {
-            if(currentItem.find((item) => item.id === id)?.quantity === 1){
-                return currentItem.filter((item) => item.id !== id);
-            } else {
-                return currentItem.map((item)=> {
-                    if (item.id === id){
-                        return {...item, quantity: item.quantity - 1};
-                    } else {
-                        return item;
-                    }
-                });
-            }
+  const removeItem = (id) => {
+    setCart((currentItem) => {
+      if (currentItem.find((item) => item.id === id)?.quantity === 1) {
+        return currentItem.filter((item) => item.id !== id);
+      } else {
+        return currentItem.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
         });
-    }; 
+      }
+    });
+  };
 
-    const getQuantityById = (id) => {
-        return cart.find((item) => item.id === id)?.quantity || 0;
-    };
+  const getQuantityById = (id) => {
+    return cart.find((item) => item.id === id)?.quantity || 0;
+  };
 
-    const quantityPerItem = getQuantityById(id);
-     
-    return (
-   <div className="productsCard">
-        {
-            quantityPerItem > 0 && (
-                <div className='item-quantity'>{quantityPerItem}</div>
-            )
-        }
-        <div>{name}</div> 
-        <img src={imgUrl} alt='food' width="250" height="300" />
-        <div className='productPrice'>${price}</div>
-       {
-            quantityPerItem === 0 ? (
-                <button className="productAddButton" onClick={() => addToCart() }>+ add to cart</button>
-            ) : (
-                <button className="productPlusButton" onClick={() => addToCart() }>+ add to more</button>
-            )
-       }
-       {
-        quantityPerItem > 0 && (
-            <button className="productMinusButton" onClick={() => removeItem(id) }>subtract item</button>
-        )
-       }
-   </div>
-)
-}
+  const quantityPerItem = getQuantityById(id);
 
-export default ProductsCard
+  return (
+    <div className="productsCard">
+      {quantityPerItem > 0 && (
+        <div className="item-quantity">{quantityPerItem}</div>
+      )}
+      {user != null && user.email === "prueba@prueba.com" && (
+        <>
+          <button onClick={() => unlistItem(id)}>Unlist Item</button>
+        </>
+      )}
+      <div>{name}</div>
+      <img src={imgUrl} alt="food" width="250" height="300" />
+      <div className="productPrice">${price}</div>
+      {quantityPerItem === 0 ? (
+        <button className="productAddButton" onClick={() => addToCart()}>
+          + add to cart
+        </button>
+      ) : (
+        <button className="productPlusButton" onClick={() => addToCart()}>
+          + add to more
+        </button>
+      )}
+      {quantityPerItem > 0 && (
+        <button className="productMinusButton" onClick={() => removeItem(id)}>
+          subtract item
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default ProductsCard;

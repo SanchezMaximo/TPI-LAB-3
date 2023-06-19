@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const NavBar = (props) => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
-  const { logout, user, username } = useAuth();
+  const { logout, user } = useAuth();
   //arrow function para cambiar el estado del navbar
   const handleClick = () => {
     setCollapsed(!collapsed);
@@ -36,11 +36,12 @@ const NavBar = (props) => {
                 </li>
               );
             })}
+
             {user != null ? (
               <>
                 <p>
                   Welcome
-                  <br /> {username}
+                  <br /> {user.email}
                 </p>
                 <button className="buttonLogout" onClick={handleLogout}>
                   Log Out

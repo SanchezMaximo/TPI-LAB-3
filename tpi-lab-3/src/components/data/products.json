@@ -1,74 +1,86 @@
 [
-    {
-        "id":1,
-        "name": "croissant",
-        "price": 100,
-        "imgUrl": "https://images.unsplash.com/photo-1600521853186-93b88b3a07b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-    },
-    {
-        "id":2,
-        "name": "cake",
-        "price": 150,
-        "imgUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-    },
-    {
-        "id":3,
-        "name": "sandwich",
-        "price": 500,
-        "imgUrl": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
-    },
-    {
-        "id":4,
-        "name": "cup cake",
-        "price": 50,
-        "imgUrl": "https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80"
-    },
-    {
-        "id":5,
-        "name": "roll de canela",
-        "price": 150,
-        "imgUrl": "https://images.unsplash.com/photo-1630182266697-92508c01e2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
-    },
-    {
-        "id":6,
-        "name": "pan de chocolate",
-        "price": 200,
-        "imgUrl": "https://images.unsplash.com/photo-1613929231151-d7571591259e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-        "id":7,
-        "name": "avocado toast",
-        "price": 400,
-        "imgUrl": "https://images.unsplash.com/photo-1633204339698-5353c80c9046?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-        "id":8,
-        "name": "cookie",
-        "price": 150,
-        "imgUrl": "https://images.unsplash.com/photo-1625876981820-be17a6807189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-    },
-    {
-        "id":9,
-        "name": "flat white",
-        "price": 200,
-        "imgUrl": "https://images.unsplash.com/photo-1604423043492-41303788de80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=798&q=80"
-    },
-    {
-        "id":10,
-        "name": "espresso",
-        "price": 150,
-        "imgUrl": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-        "id":11,
-        "name": "chocolatada",
-        "price": 200,
-        "imgUrl": "https://images.unsplash.com/photo-1596038590958-f2d4f27279c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-    },
-    {
-        "id":12,
-        "name": "caramel coffee",
-        "price": 300,
-        "imgUrl": "https://images.unsplash.com/photo-1546470427-0d4db154ceb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-    }
+  {
+    "id": 1,
+    "name": "croissant",
+    "type": "Food",
+    "price": 100,
+    "imgUrl": "https://images.unsplash.com/photo-1600521853186-93b88b3a07b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 2,
+    "name": "cake",
+    "type": "Food",
+    "price": 150,
+    "imgUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+  },
+  {
+    "id": 3,
+    "name": "sandwich",
+    "type": "Food",
+    "price": 500,
+    "imgUrl": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+  },
+  {
+    "id": 4,
+    "name": "cup cake",
+    "type": "Food",
+    "price": 50,
+    "imgUrl": "https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80"
+  },
+  {
+    "id": 5,
+    "name": "roll de canela",
+    "type": "Food",
+    "price": 150,
+    "imgUrl": "https://images.unsplash.com/photo-1630182266697-92508c01e2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+  },
+  {
+    "id": 6,
+    "name": "pan de chocolate",
+    "type": "Food",
+    "price": 200,
+    "imgUrl": "https://images.unsplash.com/photo-1613929231151-d7571591259e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+  },
+  {
+    "id": 7,
+    "name": "avocado toast",
+    "type": "Food",
+    "price": 400,
+    "imgUrl": "https://images.unsplash.com/photo-1633204339698-5353c80c9046?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+  },
+  {
+    "id": 8,
+    "name": "cookie",
+    "type": "Food",
+    "price": 150,
+    "imgUrl": "https://images.unsplash.com/photo-1625876981820-be17a6807189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 9,
+    "name": "flat white",
+    "type": "Coffee",
+    "price": 200,
+    "imgUrl": "https://images.unsplash.com/photo-1604423043492-41303788de80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=798&q=80"
+  },
+  {
+    "id": 10,
+    "name": "espresso",
+    "type": "Coffee",
+    "price": 150,
+    "imgUrl": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+  },
+  {
+    "id": 11,
+    "name": "chocolatada",
+    "type": "other drinks",
+    "price": 200,
+    "imgUrl": "https://images.unsplash.com/photo-1596038590958-f2d4f27279c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+  },
+  {
+    "id": 12,
+    "name": "caramel coffee",
+    "type": "Coffee",
+    "price": 300,
+    "imgUrl": "https://images.unsplash.com/photo-1546470427-0d4db154ceb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+  }
 ]
