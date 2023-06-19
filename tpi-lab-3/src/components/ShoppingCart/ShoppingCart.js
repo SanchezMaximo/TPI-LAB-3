@@ -26,12 +26,12 @@ const ShoppingCart = () => {
     <>
       <NavBar />
       <div className="cartContainer">
-        <div>Items in cart : {quantity}</div>
+        <div>Products in cart : {quantity}</div>
         <button className="btn-checkout" onClick={handleCheckout}>
           Checkout
         </button>
         <div className={show ? "showCard" : "noShowCard"}>
-            {quantity === 0 && !show && (
+            {quantity === 0 && show && (
               <div className="noShowCard">
               <p>Opps! There are no products in the cart.</p>
               </div>
