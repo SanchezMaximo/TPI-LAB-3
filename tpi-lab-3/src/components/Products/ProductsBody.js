@@ -36,6 +36,9 @@ const ProductsBody = () => {
 
   return (
     <div>
+      <button onClick={() => setProducts(storeProducts)}>
+        DEVOLVER DEFAULT
+      </button>
       <div className="cartItems">
         <Link to={"/cart"} className="linkCart">
           Cart items: <span className="cartCount">{quantity}</span>
