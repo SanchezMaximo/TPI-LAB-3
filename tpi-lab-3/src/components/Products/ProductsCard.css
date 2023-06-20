@@ -1,29 +1,31 @@
-.productsCard{
-    background-color: #fff;
-    margin: 10px;
-    padding: 20px;
-    width: 110;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.productsCard {
+  background-color: rgb(253, 249, 244);
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  width: 110;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-.productPrice {
-    color: gray;
+.dark {
+  background-color: black;
+  color: white;
 }
 
 .productAddButton {
-    background-color: #5cb85c;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-    padding: 10px;
-  }
+  background-color: #5cb85c;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 10px;
+}
 
-.productAddButton:hover{
-    background-color: #428342;
-    color:#fff;
+.productAddButton:hover {
+  background-color: #428342;
+  color: #fff;
 }
 
 .item-quantity {
@@ -33,37 +35,37 @@
   justify-content: center;
   border-radius: 20px;
   max-width: 30px;
-  position:relative;
+  position: relative;
   left: 105px;
   margin: 5px;
 }
 
-.productPlusButton{
-    background-color: #337ab7;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    position:relative;
-    margin: 5px;
-    left: 70px;
-    padding: 4px;
+.productPlusButton {
+  background-color: #337ab7;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 5px;
+  left: 70px;
+  padding: 4px;
 }
 
-.productMinusButton{
-    background-color: #d9534f;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    position:relative;
-    margin: 5px;
-    left: 70px;
-    padding: 4px 7px;
+.productMinusButton {
+  background-color: #d9534f;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 5px;
+  left: 70px;
+  padding: 4px 7px;
 }

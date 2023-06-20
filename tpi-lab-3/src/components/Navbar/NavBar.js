@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-const NavBar = (props) => {
+const NavBar = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const { logout, user } = useAuth();
@@ -77,6 +77,7 @@ const NavBar = (props) => {
           ></i>
         </div>
       </nav>
+      {children}
     </>
   );
 };
