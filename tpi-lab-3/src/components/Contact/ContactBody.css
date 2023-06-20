@@ -1,24 +1,61 @@
-.contactBody{
+.contactBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
     color: #fff;
-    border-color: black;
-    border-style: double;
-    margin: 20px;
+  }
+  
+  .contactBody h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .infoContact,
+  .locationContact,
+  .hoursContact {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction:column;
     align-items: center;
-} 
-.infoContact{
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hours{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .infoContact h4,
+  .locationContact h4,
+  .hoursContact h4 {
+    font-size: 18px;
+    margin: 3px;
+  }
+  
+  .infoContact p,
+  .locationContact p,
+  .hoursContact p {
+    margin: 4px;
+  }
+  
+  .hoursContact h5 {
+    font-size: 16px;
+    margin: 5px;
+  }
+  
+  .hoursContact p {
+    margin-bottom: 4px;
+  }
 
+@media (max-width: 920px) {
+    .contactBody {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contactBody .infoContact,
+    .contactBody .locationContact,
+    .contactBody .hoursContact {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
