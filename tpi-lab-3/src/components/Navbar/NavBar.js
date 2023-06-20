@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { MenuItems } from "../MenuItems";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const NavBar = (props) => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const { logout, user } = useAuth();
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   //arrow function para cambiar el estado del navbar
   const handleClick = () => {
     setCollapsed(!collapsed);
@@ -19,7 +22,7 @@ const NavBar = (props) => {
   };
   return (
     <>
-      <nav>
+      <nav className={isDarkMode ? "dark" : "light"}>
         <a href="/">
           <img src="./img/logo.png" alt="coffee-mug " width={60} height={60} />
         </a>
@@ -63,6 +66,7 @@ const NavBar = (props) => {
                 </li>
               </div>
             )}
+            <button onClick={toggleTheme}>Toggle theme</button>
           </ul>
         </div>
         {/* cambio de logo del navbar */}

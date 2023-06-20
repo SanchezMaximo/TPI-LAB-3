@@ -2,9 +2,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #87481d;
+
   padding: 20px 80px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
+  background-color: #87481d;
+  color: #fff;
 }
 
 #navbar {

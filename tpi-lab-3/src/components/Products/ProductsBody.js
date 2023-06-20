@@ -36,7 +36,12 @@ const ProductsBody = () => {
 
   return (
     <div>
-      <button onClick={() => setProducts(storeProducts)}>
+      <button
+        onClick={() => {
+          setProducts(storeProducts);
+          localStorage.setItem("products", JSON.stringify(storeProducts));
+        }}
+      >
         DEVOLVER DEFAULT
       </button>
       <div className="cartItems">
