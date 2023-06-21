@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
-
-import "./ProductsBody.css";
-import { useState, useEffect } from "react";
+import React, { useContext , useState, useEffect } from "react";
 import ProductsCard from "./ProductsCard";
 import storeProducts from "../data/products.json";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/ShoppingCartProvider";
+
+import "./ProductsBody.css";
+import CrudApp from "../Crud/CrudApp";
+
 
 const ProductsBody = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -44,6 +45,9 @@ const ProductsBody = () => {
       >
         DEVOLVER DEFAULT
       </button>
+      
+      <CrudApp />
+
       <div className="cartItems">
         <Link to={"/cart"} className="linkCart">
           Cart items: <span className="cartCount">{quantity}</span>
@@ -60,6 +64,7 @@ const ProductsBody = () => {
           );
         })}
       </div>
+
     </div>
   );
 };

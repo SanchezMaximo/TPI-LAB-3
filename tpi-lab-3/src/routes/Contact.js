@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
 import ContactPage from "../components/Contact/ContactPage";
 import ContactBody from "../components/Contact/ContactBody";
 

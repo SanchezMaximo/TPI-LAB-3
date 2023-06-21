@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/ShoppingCartProvider";
-import NavBar from "../Navbar/NavBar.js";
 
 import "./ShoppingCart.css";
 
@@ -24,7 +23,6 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <NavBar />
       <div className="cartContainer">
         <div>Products in cart : {quantity}</div>
         <button className="btn-checkout" onClick={handleCheckout}>

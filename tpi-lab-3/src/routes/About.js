@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
 import AboutPage from "../components/About/AboutPage";
 
 const About = () => {

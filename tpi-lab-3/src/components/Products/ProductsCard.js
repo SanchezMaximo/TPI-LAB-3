@@ -4,10 +4,11 @@ import { ThemeContext } from "../context/ThemeContext";
 import "./ProductsCard.css";
 import { useAuth } from "../context/authContext";
 
-const ProductsCard = ({ name, price, id, imgUrl, unlistItem }) => {
+const ProductsCard = ({ name, price, id, imgUrl, unlistItem ,product, setDataToEdit, deleteData}) => {
   const { user } = useAuth();
   const [cart, setCart] = useContext(CartContext);
   const { isDarkMode } = useContext(ThemeContext);
+
 
   const addToCart = () => {
     setCart((currentItem) => {
@@ -56,7 +57,12 @@ const ProductsCard = ({ name, price, id, imgUrl, unlistItem }) => {
       {user != null && user.email === "prueba@prueba.com" && (
         <>
           <button onClick={() => unlistItem(id)}>Unlist Item</button>
+          <br></br>
+          <button onClick={() => deleteData(id)}>Eliminar</button>
+          <br></br>
+          <button className="productEditButton" onClick={() => setDataToEdit(product)}>edit product</button>
         </>
+          
       )}
       <div>{name}</div>
       <img src={imgUrl} alt="food" width="250" height="300" />
