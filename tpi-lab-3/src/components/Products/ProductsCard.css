@@ -13,6 +13,27 @@
   color: white;
 }
 
+.productEditButton{
+  background-color: #c3c948;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+}
+
+.productDeleteButton{
+  background-color: #d9534f;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 10px;
+}
+
 .productAddButton {
   background-color: #5cb85c;
   border-radius: 5px;

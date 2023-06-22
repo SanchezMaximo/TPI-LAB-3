@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "./CrudForm.css"
+
 const storeProdToEdit = {
   name: "",
   type: "",
@@ -49,7 +51,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   };
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
