@@ -30,31 +30,33 @@ const SigIn = () => {
     }
   };
   return (
-    <div className="login-container">
-      <form className="login-container" onSubmit={handleSubmit}>
+    <div className="signIn-container">
+      <form className="signIn-form" onSubmit={handleSubmit}>
         <h1>SIGN UP</h1>
-        <h3 className="login-label">Email </h3>
+        <h3 className="signIn-label">Email </h3>
         <input
-          className="login-input"
+          className="signIn-input"
           type="text"
           placeholder="example@example.as"
           name="email"
           value={email}
           onChange={emailChangedHandler}
         />
-        <h3 className="login-label">Password </h3>
+        <h3 className="signIn-label">Password </h3>
         <input
-          className="login-input"
+          className="signIn-input"
           type="password"
           placeholder="password"
           name="password"
           value={pass}
           onChange={passwordChangedHandler}
         />
-        <button className="login-button">Sign In</button>
+        <button className="signIn-button">Sign In</button>
       </form>
+      <div className="signInRegistration">
       <p>Already have an accout?</p>
       <Link to="/login">Click here to login</Link>
+      </div>
       <ToastContainer
         position="top-right"
         autoClose={5000}

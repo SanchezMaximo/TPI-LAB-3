@@ -1,40 +1,45 @@
-.login-container {
+.signIn-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-.login-form {
-  display: flex;
+.signIn-form {
+  display: flexbox;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 10px ;
+  background: #c1a08b;
 }
 
-.login-label {
-  font-size: 18px;
-  margin: 10px 0;
+.signIn-label {
+  font-size: 19px;
+  margin: 10px ;
+  padding-top: 6px;
 }
 
-.login-input {
+.signIn-input {
   width: 100%;
-  max-width: 300px; /* Set a maximum width for the input fields */
-  padding: 12px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 4px;
   border: none;
-  border-radius: 4px;
-  background-color: #f2f2f2;
+  border-radius: 6px;
+  background-color: #cdc9c9;
 }
 
-.login-input:focus {
+.signIn-input:focus {
   outline: none;
-  background-color: #e6e6e6;
+  background-color: #fff;
 }
 
-.login-button {
+.signIn-button {
+  margin-top: 30px;
   padding: 12px 24px;
   background-color: #4caf50;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -43,4 +48,14 @@
 
 .login-button:hover {
   background-color: #45a049;
+}
+
+.signInRegistration{
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px ;
+  font-size: 16px;
+  background: #c1a08b;
 }

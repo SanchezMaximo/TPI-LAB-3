@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import "./Login.css"
 import "../SignIn/Signin.css";
 
 const LogIn = () => {
@@ -55,8 +56,10 @@ const LogIn = () => {
         />
         <button className="login-button">Log In</button>
       </form>
+      <div className="loginRegistration">
       <p>Don't have an account?</p>
       <Link to="/signup">Click here to Sign Up</Link>
+      </div>
       <ToastContainer
         position="top-right"
         autoClose={5000}

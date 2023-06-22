@@ -54,6 +54,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <input
+          className="inputName"
           type="text"
           name="name"
           placeholder="nombre"
@@ -61,6 +62,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.name}
         />
         <input
+          className="inputType"
           type="text"
           name="type"
           placeholder="tipo"
@@ -68,6 +70,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.type}
         />
         <input
+          className="inputPrice"
           type="number"
           name="price"
           placeholder="precio"
@@ -75,14 +78,15 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.price}
         />
         <input
+          className="inputImg"
           type="text"
           name="imgUrl"
           placeholder="imagenUrl"
           onChange={handleChange}
           value={form.imgUrl}
         />
-        <input type="submit" value="enviar" />
-        <input type="reset" value="limpiar" onClick={handleReset} />
+        <input className="inputSend" type="submit" value="enviar" />
+        <input className="inputClean" type="reset" value="limpiar" onClick={handleReset} />
       </form>
     </div>
   );

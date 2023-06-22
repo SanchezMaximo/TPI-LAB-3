@@ -5,7 +5,8 @@
   padding: 20px;
   width: 110;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: none;
+ 
 }
 
 .dark {
