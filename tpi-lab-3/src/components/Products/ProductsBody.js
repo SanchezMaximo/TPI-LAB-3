@@ -1,16 +1,16 @@
-import React, { useContext , useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ProductsCard from "./ProductsCard";
 import storeProducts from "../data/products.json";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/ShoppingCartProvider";
+import CrudForm from "../Crud/CrudForm";
 
 import "./ProductsBody.css";
-import CrudApp from "../Crud/CrudApp";
-
 
 const ProductsBody = () => {
   const [cart, setCart] = useContext(CartContext);
   const [products, setProducts] = useState([]);
+  const [dataToEdit, setDataToEdit] = useState(null);
 
   useEffect(() => {
     const storedProducts = localStorage.getItem("products");
@@ -25,6 +25,20 @@ const ProductsBody = () => {
     return acum + current.quantity;
   }, 0);
 
+  const createData = (data) => {
+    const updatedProducts = [...products, data];
+    setProducts(updatedProducts);
+    localStorage.setItem("products", JSON.stringify(updatedProducts));
+  };
+
+  const updateData = (data) => {
+    const updatedProducts = products.map((product) =>
+      product.id === data.id ? data : product
+    );
+    setProducts(updatedProducts);
+    localStorage.setItem("products", JSON.stringify(updatedProducts));
+  };
+
   const unlistItem = (id) => {
     setProducts((currentProducts) => {
       const updatedProducts = currentProducts.filter(
@@ -37,6 +51,12 @@ const ProductsBody = () => {
 
   return (
     <div>
+      <CrudForm
+        createData={createData}
+        updateData={updateData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
+      />
       <button
         onClick={() => {
           setProducts(storeProducts);
@@ -45,8 +65,6 @@ const ProductsBody = () => {
       >
         DEVOLVER DEFAULT
       </button>
-      
-      <CrudApp />
 
       <div className="cartItems">
         <Link to={"/cart"} className="linkCart">
@@ -59,12 +77,13 @@ const ProductsBody = () => {
             <ProductsCard
               key={product.id}
               {...product}
+              product={product}
+              setDataToEdit={setDataToEdit}
               unlistItem={unlistItem}
             />
           );
         })}
       </div>
-
     </div>
   );
 };

@@ -13,9 +13,9 @@ root.render(
     <BrowserRouter>
       <ShoppingCartProvider>
         <ThemeProvider>
-          <App>
-            <NavBar />
-          </App>
+          <NavBar>
+            <App />
+          </NavBar>
         </ThemeProvider>
       </ShoppingCartProvider>
     </BrowserRouter>
