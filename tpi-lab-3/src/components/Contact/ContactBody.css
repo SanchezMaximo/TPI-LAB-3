@@ -4,9 +4,15 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    color: #fff;
+    color: #222;
+    background: #88481d;
   }
-  
+
+#ContactBody.dark{
+  background-color: rgb(24, 24, 24);;
+  color: white;
+}  
+ 
   .contactBody h2 {
     font-size: 24px;
     margin-bottom: 10px;
