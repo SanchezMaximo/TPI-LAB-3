@@ -14,6 +14,7 @@ const ProductsBody = () => {
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
+  const { user } = useAuth();
 
   useEffect(() => {
     const storedProducts = localStorage.getItem("products");
@@ -55,21 +56,27 @@ const ProductsBody = () => {
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      <CrudForm
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-        updatedProducts={products}
-      />
-      <button
-        onClick={() => {
-          setProducts(storeProducts);
-          localStorage.setItem("products", JSON.stringify(storeProducts));
-        }}
-      >
-        DEVOLVER DEFAULT
-      </button>
+      {user && user.email === "prueba@prueba.com" ? (
+        <div>
+          <CrudForm
+            createData={createData}
+            updateData={updateData}
+            dataToEdit={dataToEdit}
+            setDataToEdit={setDataToEdit}
+            updatedProducts={products}
+          />
+          <button
+            onClick={() => {
+              setProducts(storeProducts);
+              localStorage.setItem("products", JSON.stringify(storeProducts));
+            }}
+          >
+            DEVOLVER DEFAULT
+          </button>
+        </div>
+      ) : (
+        <div></div>
+      )}
 
       <div className="cartItems">
         <Link to={"/cart"} className="linkCart">
