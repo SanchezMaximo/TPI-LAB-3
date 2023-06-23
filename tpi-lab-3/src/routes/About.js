@@ -5,9 +5,8 @@ import "../components/context/theme.css";
 import AboutBody from "../components/About/AboutBody";
 
 const About = () => {
-  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div className={isDarkMode ? "dark" : "light"}>
+    <div>
       <AboutPage
         aboutPageMid="aboutPageMid"
         imgClass="imgClass"
