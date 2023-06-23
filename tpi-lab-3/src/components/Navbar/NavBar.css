@@ -59,10 +59,10 @@ nav {
   margin-left: 20px;
   padding: 1px 20px;
   position: relative;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 10px;
   border-color: #fff;
+  border-radius: 10px;
   font-size: 1.1rem;
   color: #fff;
   background: #87481d;
@@ -88,6 +88,12 @@ nav {
   align-items: center;
   justify-content: center;
 }
+.registrationNavBar p{
+  font-size: 1.1rem;
+  position: relative;
+  text-decoration: none;
+  padding: 13px 10px 0px;
+}
 
 .buttonLogIn,
 .buttonSignUp{
@@ -95,7 +101,6 @@ nav {
   list-style:none;
   margin-left: 15px;
   border-radius: 10px;
-  font-size: 1.1rem;
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;

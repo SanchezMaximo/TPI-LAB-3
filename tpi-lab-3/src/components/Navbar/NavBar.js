@@ -41,15 +41,14 @@ const NavBar = ({ children }) => {
             })}
 
             {user != null ? (
-              <>
+              <div className="registrationNavBar">
                 <p>
-                  Welcome
-                  <br /> {user.email}
+                  Welcome {user.email.split('@')[0]}
                 </p>
                 <button className="buttonLogout" onClick={handleLogout}>
                   Log Out
                 </button>
-              </>
+              </div>
             ) : (
               <div className="registrationNavBar"> 
                 <li
