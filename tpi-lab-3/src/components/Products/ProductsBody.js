@@ -26,6 +26,7 @@ const ProductsBody = () => {
   }, 0);
 
   const createData = (data) => {
+    data.id = Math.random();
     const updatedProducts = [...products, data];
     setProducts(updatedProducts);
     localStorage.setItem("products", JSON.stringify(updatedProducts));
@@ -56,6 +57,7 @@ const ProductsBody = () => {
         updateData={updateData}
         dataToEdit={dataToEdit}
         setDataToEdit={setDataToEdit}
+        updatedProducts={products}
       />
       <button
         onClick={() => {

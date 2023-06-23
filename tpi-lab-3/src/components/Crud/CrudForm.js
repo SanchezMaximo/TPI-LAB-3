@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./CrudForm.css"
+import "./CrudForm.css";
 
 const storeProdToEdit = {
   name: "",
@@ -10,7 +10,13 @@ const storeProdToEdit = {
   id: null,
 };
 
-const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const CrudForm = ({
+  createData,
+  updateData,
+  dataToEdit,
+  setDataToEdit,
+  updatedProducts,
+}) => {
   const [form, setForm] = useState(storeProdToEdit);
 
   useEffect(() => {
@@ -20,6 +26,18 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       setForm(storeProdToEdit);
     }
   }, [dataToEdit]);
+
+  const generateUniqueId = () => {
+    let newId = 1; // Valor inicial para el nuevo ID
+    const usedIds = updatedProducts.map((product) => product.id); // Obtener un array de los IDs utilizados actualmente
+
+    while (usedIds.includes(newId)) {
+      // Mientras el nuevo ID esté en uso, incrementarlo y comprobar nuevamente
+      newId++;
+    }
+
+    return newId;
+  };
 
   const handleChange = (e) => {
     setForm({
@@ -37,6 +55,12 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     }
 
     if (form.id === null) {
+      const newId = generateUniqueId();
+      // Actualizar el objeto 'form' con el nuevo ID
+      setForm({
+        ...form,
+        id: newId,
+      });
       createData(form);
     } else {
       updateData(form);
@@ -86,7 +110,12 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.imgUrl}
         />
         <input className="inputSend" type="submit" value="enviar" />
-        <input className="inputClean" type="reset" value="limpiar" onClick={handleReset} />
+        <input
+          className="inputClean"
+          type="reset"
+          value="limpiar"
+          onClick={handleReset}
+        />
       </form>
     </div>
   );
