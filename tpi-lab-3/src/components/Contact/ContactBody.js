@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from "../context/ThemeContext";
 import "./ContactBody.css";
 
 const ContactBody = () => {
+  const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className='contactBody'>
+    <div  id='ContactBody'
+    className={`contactBody ${isDarkMode ? "dark" : ""}`}>
         <h2>Contact Us</h2>
         <div className='infoContact'>
           <h4>Phone</h4>

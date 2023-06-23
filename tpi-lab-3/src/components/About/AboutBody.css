@@ -1,0 +1,15 @@
+.aboutBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: #222;
+    background: #88481d;
+  }
+
+#AboutBody.dark{
+  background-color: rgb(24, 24, 24);;
+  color: white;
+}  
+ 
