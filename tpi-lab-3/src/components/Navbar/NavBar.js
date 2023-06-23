@@ -53,7 +53,7 @@ const NavBar = ({ children }) => {
             ) : (
               <div>
                 <li
-                  className="buttonLogout fa-solid fa-right-to-bracket"
+                  className="buttonLogIn fa-solid fa-right-to-bracket"
                   onClick={() => navigate("/login")}
                 >
                   Log in

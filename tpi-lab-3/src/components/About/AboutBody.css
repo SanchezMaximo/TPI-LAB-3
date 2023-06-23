@@ -5,7 +5,6 @@
     flex-direction: column;
     padding: 20px;
     color: #222;
-    background: #88481d;
   }
 
 #AboutBody.dark{
@@ -13,3 +12,27 @@
   color: white;
 }  
  
+.presentation,
+.history,
+.experience{
+    display: flexbox;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+.presentation{
+    background: #8a4b2149;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#AboutBody.dark .presentation{
+    background: #8a4b2149;
+    box-shadow: 0 1px 2px #fff;
+    border-radius: 4px;
+    padding: 10px;
+}

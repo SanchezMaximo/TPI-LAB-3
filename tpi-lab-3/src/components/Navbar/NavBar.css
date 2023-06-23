@@ -74,6 +74,19 @@ nav {
   color: #1b2340;
   transition: all 0.3s ease-in-out;
 }
+#NavBar.dark .buttonLogout{
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+#NavBar.dark .buttonLogout:hover {
+  background: #fff;
+  color: #1b2340;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .buttonLogIn{
+
+} */
 /* estilo de iconos navbar */
 .icon {
   list-style: none;
@@ -100,11 +113,12 @@ nav {
     right: -300px;
     width: 250px;
     height: 100vh;
-    background: #2a3239;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 40px 0 0 10px;
     z-index: -1;
     transition: 0.3s ease-in-out;
+    background-color: rgb(24, 24, 24);
+    color: white;
   }
 
   #navbar.active {
@@ -127,11 +141,13 @@ nav {
 
   .buttonLogout {
     margin: 10px 0px 0px 45px;
-    background: #2a3239;
+    background-color: rgb(24, 24, 24);
+    color: white;
   }
   .buttonLogout:hover {
     background: #fff;
     color: #1b2340;
     transition: all 0.3s ease-in-out;
   }
+  
 }
