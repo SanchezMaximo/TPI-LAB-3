@@ -1,59 +1,62 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form {
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    border-radius: 5px ;
-    background: #be5814;
-  }
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+#form.dark {
+  background-color: rgb(58, 58, 58);
+}
+
+#form.light {
+  background: #be5814;
+}
 
 .inputImg,
 .inputName,
 .inputPrice,
-.inputType
- {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 200px;
-  }
-  
+.inputType {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
 .inputSend,
 .inputClean {
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-    background-color: #6bad6d;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .inputSend:hover,
-  .inputClean:hover {
-    background-color: #45a049;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #6bad6d;
+  color: white;
+  cursor: pointer;
+}
+
+.inputSend:hover,
+.inputClean:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 920px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-
-  @media screen and (max-width: 920px) {
-   
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-    .inputSend,
-    .inputClean {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .inputSend,
+  .inputClean {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+}

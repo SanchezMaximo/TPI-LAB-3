@@ -22,7 +22,7 @@ const NavBar = ({ children }) => {
   };
   return (
     <>
-      <nav className={isDarkMode ? "dark" : "light"}>
+      <nav id="NavBar" className={isDarkMode ? "dark" : "light"}>
         <a href="/">
           <img src="./img/logo.png" alt="coffee-mug " width={60} height={60} />
         </a>

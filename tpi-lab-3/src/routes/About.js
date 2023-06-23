@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import AboutPage from "../components/About/AboutPage";
+import { ThemeContext } from "../components/context/ThemeContext";
+import "../components/context/theme.css";
 
 const About = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div>
+    <div className={isDarkMode ? "dark" : "light"}>
       <AboutPage
         aboutPageMid="aboutPageMid"
         imgClass="imgClass"

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import "./CrudForm.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 const storeProdToEdit = {
   name: "",
@@ -10,15 +11,9 @@ const storeProdToEdit = {
   id: null,
 };
 
-const CrudForm = ({
-  createData,
-  updateData,
-  dataToEdit,
-  setDataToEdit,
-  updatedProducts,
-}) => {
+const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(storeProdToEdit);
-
+  const { isDarkMode } = useContext(ThemeContext);
   useEffect(() => {
     if (dataToEdit) {
       setForm(dataToEdit);
@@ -26,18 +21,6 @@ const CrudForm = ({
       setForm(storeProdToEdit);
     }
   }, [dataToEdit]);
-
-  const generateUniqueId = () => {
-    let newId = 1; // Valor inicial para el nuevo ID
-    const usedIds = updatedProducts.map((product) => product.id); // Obtener un array de los IDs utilizados actualmente
-
-    while (usedIds.includes(newId)) {
-      // Mientras el nuevo ID esté en uso, incrementarlo y comprobar nuevamente
-      newId++;
-    }
-
-    return newId;
-  };
 
   const handleChange = (e) => {
     setForm({
@@ -55,12 +38,6 @@ const CrudForm = ({
     }
 
     if (form.id === null) {
-      const newId = generateUniqueId();
-      // Actualizar el objeto 'form' con el nuevo ID
-      setForm({
-        ...form,
-        id: newId,
-      });
       createData(form);
     } else {
       updateData(form);
@@ -75,7 +52,7 @@ const CrudForm = ({
   };
 
   return (
-    <div className="form">
+    <div id="form" className={`form ${isDarkMode ? "dark" : "light"}`}>
       <form onSubmit={handleSubmit}>
         <input
           className="inputName"

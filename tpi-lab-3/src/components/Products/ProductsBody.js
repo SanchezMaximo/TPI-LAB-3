@@ -3,14 +3,17 @@ import ProductsCard from "./ProductsCard";
 import storeProducts from "../data/products.json";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/ShoppingCartProvider";
+import { useAuth } from "../context/authContext";
 import CrudForm from "../Crud/CrudForm";
 
 import "./ProductsBody.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 const ProductsBody = () => {
   const [cart, setCart] = useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
+  const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     const storedProducts = localStorage.getItem("products");
@@ -51,7 +54,7 @@ const ProductsBody = () => {
   };
 
   return (
-    <div>
+    <div className={isDarkMode ? "dark" : "light"}>
       <CrudForm
         createData={createData}
         updateData={updateData}

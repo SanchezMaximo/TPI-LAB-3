@@ -57,13 +57,21 @@ const ProductsCard = ({
   const quantityPerItem = getQuantityById(id);
 
   return (
-    <div className={`productsCard ${isDarkMode ? "dark" : ""}`}>
+    <div
+      id="ProductCard"
+      className={`productsCard ${isDarkMode ? "dark" : ""}`}
+    >
       {quantityPerItem > 0 && (
         <div className="item-quantity">{quantityPerItem}</div>
       )}
       {user != null && user.email === "prueba@prueba.com" && (
         <>
-          <button className="productDeleteButton" onClick={() => unlistItem(id)}>Unlist Item</button>
+          <button
+            className="productDeleteButton"
+            onClick={() => unlistItem(id)}
+          >
+            Unlist Item
+          </button>
           <br></br>
 
           <button

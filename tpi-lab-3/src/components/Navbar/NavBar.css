@@ -7,13 +7,13 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
-.dark {
-  background-color: black;
+#NavBar.dark {
+  background-color: rgb(24, 24, 24);
   color: white;
 }
 
 .light {
-  background-color: #87481d;
+  background-color: #88481d;
   color: #fff;
 }
 
