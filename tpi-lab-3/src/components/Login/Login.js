@@ -42,6 +42,7 @@ const LogIn = () => {
       <form
         id="formLogin"
         className={`${isDarkMode ? "dark login-form" : "login-form"}`}
+        onSubmit={handleSubmit}
       >
         <h1>LOG IN</h1>
         <h3 className="login-label">Email </h3>
