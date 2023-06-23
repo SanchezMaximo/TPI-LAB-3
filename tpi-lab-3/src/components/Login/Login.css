@@ -1,61 +1,73 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-.login-form {
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px;
-    padding: 30px;
-    border-radius: 10px ;
-    background: #c1a08b;
-  }
-  
-  .login-label {
-    font-size: 19px;
-    margin: 10px ;
-    padding-top: 6px;
-  }
-  
-  .login-input {
-    width: 100%;
-    padding: 8px;
-    margin: 4px;
-    border: none;
-    border-radius: 6px;
-    background-color: #cdc9c9;
-  }
-  
-  .login-input:focus {
-    outline: none;
-    background-color: #fff;
-  }
-  
-  .login-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    background-color: #4caf50;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .login-button:hover {
-    background-color: #45a049;
-  }
-  
-  .loginRegistration{
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px ;
-    font-size: 16px;
-    background: #c1a08b;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-container.dark {
+  background-color: #2b2b2a;
+}
+
+#formLogin.login-form {
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #c1a08b;
+}
+
+#formLogin.login-form.dark {
+  background: #161615;
+}
+
+.login-label {
+  font-size: 19px;
+  margin: 10px;
+  padding-top: 6px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  background-color: #cdc9c9;
+}
+
+.login-input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.login-button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+.loginRegistration {
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #c1a08b;
+}
+
+.loginRegistration.dark {
+  background: #161615;
+}

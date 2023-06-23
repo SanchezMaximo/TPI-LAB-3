@@ -1,18 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { useAuth } from "../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import "./Login.css"
+import "./Login.css";
 import "../SignIn/Signin.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
+  const { isDarkMode } = useContext(ThemeContext);
 
   const emailChangedHandler = (event) => {
     setEmail(event.target.value);
@@ -33,8 +35,14 @@ const LogIn = () => {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
+    <div
+      id="lgc"
+      className={isDarkMode ? "dark login-container" : "login-container"}
+    >
+      <form
+        id="formLogin"
+        className={`${isDarkMode ? "dark login-form" : "login-form"}`}
+      >
         <h1>LOG IN</h1>
         <h3 className="login-label">Email </h3>
         <input
@@ -56,9 +64,13 @@ const LogIn = () => {
         />
         <button className="login-button">Log In</button>
       </form>
-      <div className="loginRegistration">
-      <p>Don't have an account?</p>
-      <Link to="/signup">Click here to Sign Up</Link>
+      <div
+        className={`${
+          isDarkMode ? "dark loginRegistration" : "loginRegistration"
+        }`}
+      >
+        <p>Don't have an account?</p>
+        <Link to="/signup">Click here to Sign Up</Link>
       </div>
       <ToastContainer
         position="top-right"

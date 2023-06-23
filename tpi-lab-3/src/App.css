@@ -6,17 +6,8 @@
   box-sizing: border-box;
 }
 
-.dark {
-  background-color: black;
-  color: white;
-}
-
-.light {
-  background-color: white;
-  color: black;
-}
-
 body {
+  background-color: #683a1c;
   font-family: "Poppins", sans-serif;
 }
 .App {
