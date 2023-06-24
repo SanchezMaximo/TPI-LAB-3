@@ -10,7 +10,8 @@ import "./ProductsBody.css";
 import { ThemeContext } from "../context/ThemeContext";
 
 const ProductsBody = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
+
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
@@ -54,10 +55,19 @@ const ProductsBody = () => {
     });
   };
 
+  const addtimeHandler = (e) => {
+    console.log(addTime);
+    setAddTime(e.target.value);
+  };
+
   return (
     <div className={isDarkMode ? "dark" : "light"}>
       {user && user.email === "prueba@prueba.com" ? (
         <div>
+          <div className="setdelay">
+            <p>Order Delay: </p>
+            <input type="number" value={addTime} onChange={addtimeHandler} />
+          </div>
           <CrudForm
             createData={createData}
             updateData={updateData}

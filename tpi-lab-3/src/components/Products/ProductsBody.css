@@ -7,6 +7,21 @@
   color: #fff;
 }
 
+.setdelay {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+}
+
+.setdelay input {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
 .dark {
   background-color: #2b2b2a;
 }

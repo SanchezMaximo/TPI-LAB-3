@@ -20,6 +20,7 @@ const ProductsCard = ({
   const addToCart = () => {
     setCart((currentItem) => {
       const isItemsFound = currentItem.find((item) => item.id === id);
+
       if (isItemsFound) {
         return currentItem.map((item) => {
           if (item.id === id) {

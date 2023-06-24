@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../context/ShoppingCartProvider";
 
 import "./ShoppingCart.css";
+import PickUpTime from "../PickUpTime/PickUpTime";
 
 const ShoppingCart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
 
   const quantity = cart.reduce((acum, current) => {
     return acum + current.quantity;
@@ -29,28 +30,29 @@ const ShoppingCart = () => {
           Checkout
         </button>
         <div className={show ? "showCard" : "noShowCard"}>
-            {quantity === 0 && show && (
-              <div className="noShowCard">
+          {quantity === 0 && show && (
+            <div className="noShowCard">
               <p>Opps! There are no products in the cart.</p>
-              </div>
-            )} 
-            
-            {quantity >= 1 && show && (
-              <div className="showCheck">
-                <div>
-                  {cart.map((product) => (
-                    <p key={product.id}>{product.name}
+            </div>
+          )}
+
+          {quantity >= 1 && show && (
+            <div className="showCheck">
+              <div>
+                {cart.map((product) => (
+                  <p key={product.id}>
+                    {product.name}
                     <br></br>
                     selected amount: {product.quantity}
                     <br></br>
                     price per unit: ${product.price}
-                    </p>
-                  ))}
-                </div>
-                <div className="total">total : ${totalPrice}</div>
+                  </p>
+                ))}
               </div>
-            )}
-
+              <div className="total">total : ${totalPrice}</div>
+              <PickUpTime />
+            </div>
+          )}
         </div>
       </div>
     </>
