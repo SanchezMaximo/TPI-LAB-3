@@ -1,62 +1,81 @@
 import React, { useContext, useState, useEffect } from "react";
 import ProductsCard from "./ProductsCard";
-import storeProducts from "../data/products.json";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/ShoppingCartProvider";
 import { useAuth } from "../context/authContext";
+import { db } from "../firebaseConfig";
 import CrudForm from "../Crud/CrudForm";
-
 import "./ProductsBody.css";
 import { ThemeContext } from "../context/ThemeContext";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 
 const ProductsBody = () => {
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
+  const productsRef = collection(db, "products");
 
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
   const { user } = useAuth();
 
+  const getProducts = async () => {
+    const storedProducts = await getDocs(productsRef);
+    setProducts(
+      storedProducts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  };
+
   useEffect(() => {
-    const storedProducts = localStorage.getItem("products");
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
-    } else {
-      setProducts(storeProducts);
-    }
+    getProducts();
+    console.log("hola");
+    getProducts();
   }, []);
 
   const quantity = cart.reduce((acum, current) => {
     return acum + current.quantity;
   }, 0);
 
-  const createData = (data) => {
-    data.id = Math.random();
-    const updatedProducts = [...products, data];
-    setProducts(updatedProducts);
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
-  };
-
-  const updateData = (data) => {
-    const updatedProducts = products.map((product) =>
-      product.id === data.id ? data : product
-    );
-    setProducts(updatedProducts);
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
-  };
-
-  const unlistItem = (id) => {
-    setProducts((currentProducts) => {
-      const updatedProducts = currentProducts.filter(
-        (product) => product.id !== id
-      );
-      localStorage.setItem("products", JSON.stringify(updatedProducts));
-      return updatedProducts;
+  const createData = async (data) => {
+    await addDoc(productsRef, {
+      name: data.name,
+      price: data.price,
+      type: data.type,
+      imgUrl: data.imgUrl,
     });
+    getProducts();
+    // data.id = Math.random();
+    // const updatedProducts = [...products, data];
+    // setProducts(updatedProducts);
+    // localStorage.setItem("products", JSON.stringify(updatedProducts));
+  };
+
+  const updateData = async (data) => {
+    const prodDoc = doc(db, "products", data.id);
+    const updatedProduct = {
+      name: data.name,
+      price: data.price,
+      type: data.type,
+      imgUrl: data.imgUrl,
+    };
+
+    await updateDoc(prodDoc, updatedProduct);
+    getProducts();
+  };
+
+  const unlistItem = async (id) => {
+    const prodDoc = doc(db, "products", id);
+    await deleteDoc(prodDoc);
+    getProducts();
   };
 
   const addtimeHandler = (e) => {
-    console.log(addTime);
     setAddTime(e.target.value);
   };
 
@@ -75,14 +94,6 @@ const ProductsBody = () => {
             setDataToEdit={setDataToEdit}
             updatedProducts={products}
           />
-          <button
-            onClick={() => {
-              setProducts(storeProducts);
-              localStorage.setItem("products", JSON.stringify(storeProducts));
-            }}
-          >
-            DEVOLVER DEFAULT
-          </button>
         </div>
       ) : (
         <div></div>
