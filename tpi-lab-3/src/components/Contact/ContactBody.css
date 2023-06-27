@@ -5,13 +5,22 @@
     flex-direction: column;
     padding: 20px;
     color: #222;
-    background: #88481d;
+    background: #8a4b2149;
   }
-
-#ContactBody.dark{
-  background-color: rgb(24, 24, 24);;
+  
+.contactUs{
+  background: #88481d;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+}
+.contactBody.dark{
+  background-color: rgb(24, 24, 24);
   color: white;
 }  
+.contactBody.light{
+  color: black;
+} 
  
   .contactBody h2 {
     font-size: 24px;

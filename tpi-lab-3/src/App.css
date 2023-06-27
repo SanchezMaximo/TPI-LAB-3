@@ -9,9 +9,11 @@
 .appLight {
   background-color: #683a1c;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
 .appDark {
   background: #161615;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }

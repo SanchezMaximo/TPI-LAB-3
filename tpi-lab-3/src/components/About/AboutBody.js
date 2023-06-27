@@ -7,7 +7,7 @@ const AboutBody = () => {
     const { isDarkMode } = useContext(ThemeContext);
   return (
     <div id='AboutBody' 
-    className={`aboutBody ${isDarkMode ? "dark" : ""}`}>
+    className={`aboutBody ${isDarkMode ? "dark" : "light"}`}>
         <div className='presentation'>
         Coffee&Bakery is a modern coffee company established in Rosario, Argentina in 2001. We started in a small store far from the city center, a dedicated team with the goal of bringing something new and exciting to Rosario. Quickly, this dedication to offering exceptional coffee experiences turned into an obsession for a rapidly growing industry that was slowly spreading around the world.
         </div>

@@ -5,13 +5,17 @@
     flex-direction: column;
     padding: 20px;
     color: #222;
+    background: #8a4b2149;
   }
 
-#AboutBody.dark{
-  background-color: rgb(24, 24, 24);;
+.aboutBody.dark{
+  background-color: rgb(24, 24, 24);
   color: white;
 }  
- 
+
+.aboutBody.light{
+  color: black;
+} 
 .presentation,
 .history,
 .experience{
@@ -19,13 +23,16 @@
     flex-direction:column;
     align-items: center;
     text-align: center;
-    margin: 20px;
-    
+}
+
+.history,
+.experience{
+  margin-top: 20px;
 }
 
 .presentation{
-    background: #8a4b2149;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    background: rgb(136, 72, 29);
+    box-shadow: 0 5px 15px rgb(67, 35, 14);
     border-radius: 4px;
     padding: 10px;
 }

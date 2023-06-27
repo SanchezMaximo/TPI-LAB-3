@@ -23,7 +23,6 @@ const ShoppingCart = () => {
   };
 
   return (
-    <>
       <div className="cartContainer">
         <div>Products in cart : {quantity}</div>
         <button className="btn-checkout" onClick={handleCheckout}>
@@ -55,7 +54,6 @@ const ShoppingCart = () => {
           )}
         </div>
       </div>
-    </>
   );
 };
 

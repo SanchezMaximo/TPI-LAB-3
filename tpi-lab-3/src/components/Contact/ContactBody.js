@@ -7,8 +7,8 @@ const ContactBody = () => {
 
   return (
     <div  id='ContactBody'
-    className={`contactBody ${isDarkMode ? "dark" : ""}`}>
-        <h2>Contact Us</h2>
+    className={`contactBody ${isDarkMode ? "dark" : "light"}`}>
+        <h2 className='contactUs'>Contact Us</h2>
         <div className='infoContact'>
           <h4>Phone</h4>
           <p>(212)9427</p>
