@@ -23,8 +23,9 @@ const ShoppingCart = () => {
   };
 
   return (
+    
       <div className="cartContainer">
-        <div>Products in cart : {quantity}</div>
+        <h5>Products in cart : {quantity}</h5>
         <button className="btn-checkout" onClick={handleCheckout}>
           Checkout
         </button>
@@ -40,7 +41,7 @@ const ShoppingCart = () => {
               <div>
                 {cart.map((product) => (
                   <p key={product.id}>
-                    {product.name}
+                    <b>{product.name}</b>
                     <br></br>
                     selected amount: {product.quantity}
                     <br></br>
