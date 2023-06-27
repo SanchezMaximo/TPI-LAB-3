@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import { useAuth } from "../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 

@@ -14,8 +14,7 @@ import { ThemeContext } from "./components/context/ThemeContext";
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
   return (
-    <body className={isDarkMode ? "appDark" : "appLight"}>
-      <div>
+      <div className={isDarkMode ? "appDark" : "appLight"}> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
@@ -34,7 +33,6 @@ function App() {
           />
         </Routes>
       </div>
-    </body>
   );
 }
 
