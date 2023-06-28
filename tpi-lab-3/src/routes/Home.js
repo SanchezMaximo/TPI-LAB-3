@@ -11,7 +11,7 @@ const Home = () => {
         title="SPECIALTY COFFEE"
         text="We enjoy creating experiences"
         buttonText="Learn more "
-        url="/about"
+        url="/products"
         btnClass="show"
       />
     </div>
