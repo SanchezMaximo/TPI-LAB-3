@@ -4,7 +4,6 @@
   list-style: none;
   align-items: center;
   padding: 20px;
-  color: #fff;
 }
 
 .setdelay {
@@ -12,18 +11,40 @@
   justify-content: center;
   list-style: none;
   align-items: center;
+  padding: 15px; 
+  color: #222;
+}
+
+.dark .setdelay{
+  color: #fff;
 }
 
 .setdelay input {
-  margin: 10px;
+  margin-left: 5px;
   padding: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
   width: 200px;
 }
 
+.setdelay p{
+  margin: 0;
+}
 .dark {
   background-color: #2b2b2a;
+}
+
+#form.light{
+  background: rgb(136, 72, 29);
+  box-shadow: 0 3px 10px rgb(67, 35, 14);
+  border-radius: 6px;
+  margin: 20px;
+}
+
+#form.dark{
+  box-shadow: 0 3px 10px #222;
+  border-radius: 6px;
+  margin: 20px;
 }
 
 .cartCount {
@@ -43,5 +64,8 @@
 
 .linkCart {
   text-decoration: none;
+  color: #222;
+}
+.dark .linkCart{
   color: #fff;
 }

@@ -38,7 +38,7 @@
 }
 
 #AboutBody.dark .presentation{
-    background: #8a4b2149;
+    background:  rgb(24, 24, 24);
     box-shadow: 0 1px 2px #fff;
     border-radius: 4px;
     padding: 10px;

@@ -13,8 +13,6 @@ const HomePage = (props) => {
           {props.buttonText}
         </a>
       </div>
-      {/* <p>Welcome {user.email}</p>
-      <button onClick={handleLogout}>Log Out</button> */}
     </div>
   );
 };
