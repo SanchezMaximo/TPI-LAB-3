@@ -16,6 +16,13 @@ nav {
   color: #fff;
 }
 
+.logo{
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+}
+
 #navbar {
   display: flex;
   align-items: center;

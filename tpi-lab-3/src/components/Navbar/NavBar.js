@@ -23,9 +23,9 @@ const NavBar = ({ children }) => {
   return (
     <>
       <nav id="NavBar" className={isDarkMode ? "dark" : "light"}>
-        <a href="/">
-          <img src="./img/logo.png" alt="coffee-mug " width={60} height={60} />
-        </a>
+        <Link to="/" className="logo">
+          Coffee&Bakery
+        </Link>
         <div>
           {/* si el collapsed es true muestra el navbar mobile */}
           <ul id="navbar" className={collapsed ? "#navbar active" : "#navbar"}>
