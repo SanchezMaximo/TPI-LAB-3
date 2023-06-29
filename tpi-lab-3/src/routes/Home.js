@@ -12,7 +12,6 @@ const Home = () => {
         text="We enjoy creating experiences"
         buttonText="Learn more "
         url="/products"
-        btnClass="show"
       />
     </div>
   );

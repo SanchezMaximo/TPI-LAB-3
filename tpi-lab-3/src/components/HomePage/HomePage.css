@@ -48,6 +48,21 @@
     color: #fff;
  }
 
+ .showDark{
+    text-decoration: none;
+    background:  rgb(24, 24, 24);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff
+ }
+
+ .homePage-text .showDark:hover{
+    background-color: #fff;
+    color: rgb(24, 24, 24);
+ }
 @media screen and (max-width: 920px) {
     .homePage-text {
         text-align: center;

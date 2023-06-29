@@ -4,6 +4,7 @@ import Products from "./routes/Products";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
 import "./App.css";
+import NotFound from "./routes/NotFound";
 import SigIn from "./components/SignIn/Signin";
 import LogIn from "./components/Login/Login";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SigIn />} />
+          <Route path="*" element={<NotFound />} />
 
           <Route
             path="/cart"
