@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/ShoppingCartProvider";
+import { ThemeContext } from "../context/ThemeContext";
 
 import "./ShoppingCart.css";
 import PickUpTime from "../PickUpTime/PickUpTime";
 
 const ShoppingCart = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const [cart] = useContext(CartContext);
 
   const quantity = cart.reduce((acum, current) => {
@@ -24,7 +27,7 @@ const ShoppingCart = () => {
 
   return (
     
-      <div className="cartContainer">
+      <div className={isDarkMode ? "cartContainerDark" : "cartContainerLight"}>
         <h5>Products in cart : {quantity}</h5>
         <button className="btn-checkout" onClick={handleCheckout}>
           Checkout
