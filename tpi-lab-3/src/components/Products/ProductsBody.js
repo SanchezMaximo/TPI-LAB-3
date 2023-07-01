@@ -15,6 +15,7 @@ import {
   doc,
   deleteDoc,
 } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductsBody = () => {
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
@@ -49,11 +50,8 @@ const ProductsBody = () => {
       type: data.type,
       imgUrl: data.imgUrl,
     });
+    toast.success("Item Created!");
     getProducts();
-    // data.id = Math.random();
-    // const updatedProducts = [...products, data];
-    // setProducts(updatedProducts);
-    // localStorage.setItem("products", JSON.stringify(updatedProducts));
   };
 
   const updateData = async (data) => {
@@ -66,12 +64,14 @@ const ProductsBody = () => {
     };
 
     await updateDoc(prodDoc, updatedProduct);
+    toast.success("Item Updated!");
     getProducts();
   };
 
   const unlistItem = async (id) => {
     const prodDoc = doc(db, "products", id);
     await deleteDoc(prodDoc);
+    toast.success("Item Removed!");
     getProducts();
   };
 
@@ -81,7 +81,7 @@ const ProductsBody = () => {
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      {user && user.email === "prueba@prueba.com" ? (
+      {user && user.email === "admin@admin.com" ? (
         <div>
           <div className="setdelay">
             <p>Order Delay: </p>
@@ -117,6 +117,18 @@ const ProductsBody = () => {
           );
         })}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

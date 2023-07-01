@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import "./CrudForm.css";
 import { ThemeContext } from "../context/ThemeContext";
+import { ToastContainer, toast } from "react-toastify";
 
 const storeProdToEdit = {
   name: "",
@@ -33,7 +34,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     e.preventDefault();
 
     if (!form.name || !form.type || !form.price) {
-      alert("datos incompletos");
+      toast.error("Data can't be empty");
       return;
     }
 
@@ -94,6 +95,18 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           onClick={handleReset}
         />
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

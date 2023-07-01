@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { CartContext } from "../context/ShoppingCartProvider";
 
-const PickUpTime = () => {
+const PickUpTime = ({ setPickupTime }) => {
   const [pickUpTime, setPickUpTime] = useState(null);
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
 
@@ -12,6 +12,7 @@ const PickUpTime = () => {
     );
     console.log(addTime);
     setPickUpTime(modifiedTime);
+    setPickupTime(modifiedTime);
   }, [addTime]);
 
   return (

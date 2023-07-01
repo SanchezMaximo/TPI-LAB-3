@@ -65,7 +65,7 @@ const ProductsCard = ({
       {quantityPerItem > 0 && (
         <div className="item-quantity">{quantityPerItem}</div>
       )}
-      {user != null && user.email === "prueba@prueba.com" && (
+      {user != null && user.email === "admin@admin.com" && (
         <>
           <button
             className="productDeleteButton"

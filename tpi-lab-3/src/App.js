@@ -11,30 +11,38 @@ import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { useContext } from "react";
 import { ThemeContext } from "./components/context/ThemeContext";
+import PurchaseHistory from "./components/PurchaseHistory/PurchaseHistory";
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
   return (
-      <div className={isDarkMode ? "appDark" : "appLight"}> 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<SigIn />} />
-          <Route path="*" element={<NotFound />} />
-
-          <Route
-            path="/cart"
-            element={
-              <ProtectedRoute>
-                <ShoppingCart />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </div>
+    <div className={isDarkMode ? "appDark" : "appLight"}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SigIn />} />
+        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/purchases"
+          element={
+            <ProtectedRoute>
+              <PurchaseHistory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <ShoppingCart />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
