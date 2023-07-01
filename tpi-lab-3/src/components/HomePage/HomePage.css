@@ -10,14 +10,14 @@
     object-fit: cover;
 }
 
-.homePage-text {
+.homePage-text-light {
     position: absolute;
     top: 30%;
     left: 4%;
     text-align: center;
 }
 
-.homePage-text h1{
+.homePage-text-light h1{
     font-size: 3rem;
     font-weight: 800;
     background: #fff;
@@ -25,15 +25,34 @@
     -webkit-text-fill-color: transparent;
 }
 
-.homePage-text p{
+.homePage-text-light p{
     font-size: 1.3rem;
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 0.5rem 0 2rem 0;
 }
-
-.homePage-text .show{
+.homePage-text-dark {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    text-align: center;
+}
+.homePage-text-dark h1{
+    font-size: 3rem;
+    font-weight: 800;
+    background-color: rgb(24, 24, 24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.homePage-text-dark p {
+    font-size: 1.3rem;
+    background-color: rgb(24, 24, 24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5rem 0 2rem 0;
+}
+/* .homePage-text .show{
     text-decoration: none;
     background: #fff;
     padding: 1rem 2rem;
@@ -62,7 +81,7 @@
  .homePage-text .showDark:hover{
     background-color: #fff;
     color: rgb(24, 24, 24);
- }
+ } */
 @media screen and (max-width: 920px) {
     .homePage-text {
         text-align: center;
@@ -84,7 +103,7 @@
         -webkit-text-fill-color: transparent; 
  
     } 
-    .homePage-text .show{
+    /* .homePage-text .show{
         padding: 0.4rem 1.1rem;
         border-radius: 6px;
         font-size: 0.9rem ;
@@ -95,5 +114,5 @@
     .homePage-text .show:hover{
         background-color: #87481d;
         color: #fff;
-     }
+     } */
 }

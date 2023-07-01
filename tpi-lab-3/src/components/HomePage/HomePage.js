@@ -5,16 +5,16 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 const HomePage = (props) => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const { isDarkMode } = useContext(ThemeContext);
   return (
     <div className={props.homePage}>
       <img alt="coffeShop" src={props.homeImg} className={props.imgClass} />
-      <div className="homePage-text">
+      <div className={isDarkMode ? "homePage-text-dark" : "homePage-text-light"}>
         <h1>{props.title}</h1>
         <p>{props.text}</p>
-        <a href={props.url} className={isDarkMode ? "showDark" : "show"}>
+        {/* <a href={props.url} className={isDarkMode ? "showDark" : "show"}>
           {props.buttonText}
-        </a>
+        </a> */}
       </div>
     </div>
   );
