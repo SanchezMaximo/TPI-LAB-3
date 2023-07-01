@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { BrowserRouter, Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom"; // BrowserRouter
 import { AuthProvider } from "./components/context/authContext";
 import { ThemeProvider } from "./components/context/ThemeContext";
 import ShoppingCartProvider from "./components/context/ShoppingCartProvider";
@@ -10,7 +10,8 @@ import NavBar from "./components/Navbar/NavBar";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
+    <HashRouter>
       <ShoppingCartProvider>
         <ThemeProvider>
           <NavBar>
@@ -18,6 +19,7 @@ root.render(
           </NavBar>
         </ThemeProvider>
       </ShoppingCartProvider>
-    </BrowserRouter>
+      </HashRouter>
+    {/* </BrowserRouter> */}
   </AuthProvider>
 );
