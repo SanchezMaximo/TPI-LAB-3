@@ -17,7 +17,7 @@
 .btn-checkout{
   background-color: #fff;
   border-radius: 5px;
-  color: #87481d;
+  color:  rgb(24, 24, 24);
   border: none;
   font-size: 15px;
   padding: 10px; 
@@ -34,13 +34,24 @@
   padding-top:10px;
 }
 
-.showCard .showCheck{
+.showCard .showCheckLight{
   display: flexbox;
   padding: 30px;
   text-align: center;
   justify-content: center;
   background: #87481d;
   color: black;
+  border-style: solid;
+  border-radius: 6px;
+}
+
+.showCard .showCheckDark{
+  display: flexbox;
+  padding: 30px;
+  text-align: center;
+  justify-content: center;
+  background: rgb(24, 24, 24);
+  color: #fff;
   border-style: solid;
   border-radius: 6px;
 }

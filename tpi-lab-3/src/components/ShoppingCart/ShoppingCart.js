@@ -61,7 +61,7 @@ const ShoppingCart = () => {
         )}
 
         {quantity >= 1 && (
-          <div className="showCheck">
+          <div className={isDarkMode ? "showCheckDark" : "showCheckLight"} >
             <div>
               {cart.map((product) => (
                 <p key={product.id}>
