@@ -6,6 +6,7 @@ import { db } from "../firebaseConfig";
 import { useAuth } from "../context/authContext";
 import "./ShoppingCart.css";
 import PickUpTime from "../PickUpTime/PickUpTime";
+import { ToastContainer, toast } from "react-toastify";
 
 const ShoppingCart = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -22,6 +23,9 @@ const ShoppingCart = () => {
   }, 0);
 
   const handleCheckout = async () => {
+    if (quantity === 0) {
+      return toast.error("No items to buy");
+    }
     const userPurchasesRef = doc(db, "purchases", user.email);
     const userPurchasesDoc = await getDoc(userPurchasesRef);
 
@@ -45,6 +49,8 @@ const ShoppingCart = () => {
         time: pickupTime.toString(),
       });
     });
+    toast.info("Thank you for your purchase!");
+    setCart([]);
   };
 
   return (
@@ -61,7 +67,7 @@ const ShoppingCart = () => {
         )}
 
         {quantity >= 1 && (
-          <div className={isDarkMode ? "showCheckDark" : "showCheckLight"} >
+          <div className={isDarkMode ? "showCheckDark" : "showCheckLight"}>
             <div>
               {cart.map((product) => (
                 <p key={product.id}>
@@ -78,6 +84,18 @@ const ShoppingCart = () => {
           </div>
         )}
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

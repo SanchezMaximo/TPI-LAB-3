@@ -8,6 +8,7 @@ import NotFound from "./routes/NotFound";
 import SigIn from "./components/SignIn/Signin";
 import LogIn from "./components/Login/Login";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { UserActive } from "./components/ProtectedRoute/UserActive";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "./components/context/ThemeContext";
@@ -15,13 +16,13 @@ import PurchaseHistory from "./components/PurchaseHistory/PurchaseHistory";
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
-  
+
   useEffect(() => {
     const body = document.body;
-    body.classList.add(isDarkMode ? 'appDark' : 'appLight');
-    
+    body.classList.add(isDarkMode ? "appDark" : "appLight");
+
     return () => {
-      body.classList.remove('appDark', 'appLight');
+      body.classList.remove("appDark", "appLight");
     };
   }, [isDarkMode]);
 
@@ -32,8 +33,22 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/signup" element={<SigIn />} />
+        <Route
+          path="/login"
+          element={
+            <UserActive>
+              <LogIn />
+            </UserActive>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <UserActive>
+              <SigIn />
+            </UserActive>
+          }
+        />
         <Route path="*" element={<NotFound />} />
         <Route
           path="/purchases"

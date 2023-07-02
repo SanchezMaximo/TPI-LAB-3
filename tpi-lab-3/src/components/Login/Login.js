@@ -11,7 +11,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const { login } = useAuth();
+  const { login, ToastError } = useAuth();
   const navigate = useNavigate();
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -30,7 +30,7 @@ const LogIn = () => {
       await login(email, pass);
       navigate("/products");
     } catch (errors) {
-      toast.error(errors.code);
+      ToastError(errors);
     }
   };
 

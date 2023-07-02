@@ -10,7 +10,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const SigIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const { signup } = useAuth();
+  const { signup, ToastError } = useAuth();
   const navigate = useNavigate();
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -28,9 +28,11 @@ const SigIn = () => {
       await signup(email, pass);
       navigate("/");
     } catch (errors) {
+      ToastError(errors);
       toast.error(errors.code);
     }
   };
+
   return (
     <div
       className={`${isDarkMode ? "dark signIn-container" : "signIn-container"}`}
