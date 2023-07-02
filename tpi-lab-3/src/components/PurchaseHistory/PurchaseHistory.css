@@ -1,0 +1,14 @@
+.purchaseGroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  color: white;
+}
+
+.groupContainer {
+  flex: 1 1 200px;
+}

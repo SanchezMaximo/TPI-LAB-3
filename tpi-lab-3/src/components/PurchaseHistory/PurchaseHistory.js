@@ -2,6 +2,8 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebaseConfig";
 import { useAuth } from "../context/authContext";
+import PHCard from "./PHCard";
+import "./PurchaseHistory.css";
 
 function PurchaseHistory() {
   const { user } = useAuth();
@@ -19,23 +21,41 @@ function PurchaseHistory() {
     getHistoryUser();
   }, []);
 
+  const groupByTime = () => {
+    const groupedData = {};
+    historyUser.forEach((record) => {
+      if (groupedData[record.time]) {
+        groupedData[record.time].push(record);
+      } else {
+        groupedData[record.time] = [record];
+      }
+    });
+    return Object.values(groupedData);
+  };
+
   return (
     <div>
-      <h2>Purchase History</h2>
+      <h3>Purchase History</h3>
       {historyUser.length === 0 ? (
         <p>No purchase history available.</p>
       ) : (
-        <ul>
-          {historyUser.map((record) => (
-            <li key={record.id}>
-              <p>Name: {record.name}</p>
-              <p>Price: {record.price}</p>
-              <p>Quantity: {record.quantity}</p>
-              <p>Time: {record.time}</p>
-              {user.email === "admin@admin.com" && <p>User: {record.user}</p>}
-            </li>
+        <div className="purchaseGroups">
+          {groupByTime().map((group, index) => (
+            <div key={index} className="groupContainer">
+              <h3 id="titleP">Purchase {index + 1}</h3>
+              {group.map((record) => (
+                <PHCard
+                  key={record.id}
+                  name={record.name}
+                  price={record.price}
+                  quantity={record.quantity}
+                  time={record.time}
+                  userB={record.user}
+                />
+              ))}
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

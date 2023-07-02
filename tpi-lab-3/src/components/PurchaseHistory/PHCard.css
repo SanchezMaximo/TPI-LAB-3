@@ -1,0 +1,15 @@
+.purchasesCard {
+  background-color: #fdf9f4cf;
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+}
+
+#PurchasesCard.dark {
+  background-color: rgba(0, 0, 0, 0.233);
+  color: white;
+}
