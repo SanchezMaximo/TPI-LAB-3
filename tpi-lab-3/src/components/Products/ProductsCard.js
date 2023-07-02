@@ -20,7 +20,7 @@ const ProductsCard = ({
   const addToCart = () => {
     setCart((currentItem) => {
       const isItemsFound = currentItem.find((item) => item.id === id);
-
+      //Logica para agregar items que ya se encuentran en carro
       if (isItemsFound) {
         return currentItem.map((item) => {
           if (item.id === id) {

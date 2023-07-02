@@ -8,6 +8,7 @@ import {
 import { auth } from "../firebaseConfig";
 export const authContext = createContext();
 
+//Custom hooks
 export const useAuth = () => {
   const context = useContext(authContext);
   if (!context) throw new Error("There is not auth provider");
@@ -27,7 +28,7 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => signOut(auth);
-
+  //Cambio de estado en usuario cuando se loguea, registra o logout
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

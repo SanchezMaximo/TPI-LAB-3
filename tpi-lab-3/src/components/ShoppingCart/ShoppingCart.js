@@ -42,7 +42,6 @@ const ShoppingCart = () => {
         name: element.name,
         price: element.price,
         quantity: element.quantity,
-
         time: pickupTime.toString(),
       });
     });

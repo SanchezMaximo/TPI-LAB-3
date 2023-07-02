@@ -20,7 +20,6 @@ import { ToastContainer, toast } from "react-toastify";
 const ProductsBody = () => {
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
   const productsRef = collection(db, "products");
-
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
@@ -34,8 +33,6 @@ const ProductsBody = () => {
   };
 
   useEffect(() => {
-    getProducts();
-    console.log("hola");
     getProducts();
   }, []);
 

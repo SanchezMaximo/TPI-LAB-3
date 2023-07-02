@@ -21,7 +21,7 @@ const SigIn = () => {
   const passwordChangedHandler = (event) => {
     setPass(event.target.value);
   };
-
+  //valida el registro del usuario(Si existe, si contiene contraseña valida y email valido)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +33,8 @@ const SigIn = () => {
   };
   return (
     <div
-      className={`${isDarkMode ? "dark signIn-container" : "signIn-container"}`}>
+      className={`${isDarkMode ? "dark signIn-container" : "signIn-container"}`}
+    >
       <form
         id="formSignin"
         className={`${isDarkMode ? "dark signIn-form" : "signIn-form"}`}
@@ -68,7 +69,7 @@ const SigIn = () => {
         <p>Already have an accout?</p>
         <Link to="/login">Click here to login</Link>
       </div>
-      
+
       <ToastContainer
         position="top-right"
         autoClose={5000}

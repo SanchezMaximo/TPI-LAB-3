@@ -1,10 +1,9 @@
 import React, { useState, useRef, useContext } from "react";
 import { useAuth } from "../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
 import "./Login.css";
 import "../SignIn/Signin.css";
 import { ThemeContext } from "../context/ThemeContext";
@@ -23,7 +22,8 @@ const LogIn = () => {
   const passwordChangedHandler = (event) => {
     setPass(event.target.value);
   };
-
+  //Manejo de login y sus errores
+  //valida el registro del usuario(Si existe, si contiene contraseña valida y email valido)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
