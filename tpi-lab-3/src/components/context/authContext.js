@@ -5,8 +5,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+import { auth, db } from "../firebaseConfig";
 import { toast } from "react-toastify";
+import { doc, getDoc } from "firebase/firestore";
 export const authContext = createContext();
 
 //Custom hooks
@@ -19,6 +20,7 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [role, setRole] = useState("user");
 
   const signup = async (email, password) => {
     await createUserWithEmailAndPassword(auth, email, password);
@@ -28,7 +30,16 @@ export function AuthProvider({ children }) {
     await signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logout = () => signOut(auth);
+  const logout = () => {
+    setRole(null);
+    signOut(auth);
+  };
+  const getUserRole = async (currentUser) => {
+    const userC = doc(db, "users", currentUser.email);
+    const userR = await getDoc(userC);
+    const userData = userR.data();
+    setRole(userData.role);
+  };
 
   const ToastError = (errors) => {
     if (errors.code === "auth/missing-email")
@@ -51,11 +62,14 @@ export function AuthProvider({ children }) {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      if (currentUser) {
+        getUserRole(currentUser);
+      }
     });
   }, []);
   return (
     <authContext.Provider
-      value={{ signup, login, logout, user, loading, ToastError }}
+      value={{ signup, login, logout, user, loading, ToastError, role }}
     >
       {children}
     </authContext.Provider>

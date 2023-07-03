@@ -13,7 +13,7 @@ const ProductsCard = ({
   product,
   setDataToEdit,
 }) => {
-  const { user } = useAuth();
+  const { user, role } = useAuth();
   const [cart, setCart] = useContext(CartContext);
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -37,8 +37,8 @@ const ProductsCard = ({
 
   const removeItem = (id) => {
     setCart((currentItem) => {
-      if (currentItem.find((item) => item.id === id)?.quantity === 1) { 
-         //si el item.id es igual al id que le pasamos por parametro se extrae la propiedad .quantity y si es igual a 1 se filtra y se borra 
+      if (currentItem.find((item) => item.id === id)?.quantity === 1) {
+        //si el item.id es igual al id que le pasamos por parametro se extrae la propiedad .quantity y si es igual a 1 se filtra y se borra
         return currentItem.filter((item) => item.id !== id);
       } else {
         return currentItem.map((item) => {
@@ -68,7 +68,7 @@ const ProductsCard = ({
       {quantityPerItem > 0 && (
         <div className="item-quantity">{quantityPerItem}</div>
       )}
-      {user != null && user.email === "admin@admin.com" && (
+      {user != null && role === "admin" && (
         <>
           <button
             className="productDeleteButton"

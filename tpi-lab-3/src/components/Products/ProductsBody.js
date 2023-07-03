@@ -14,16 +14,18 @@ import {
   updateDoc,
   doc,
   deleteDoc,
+  getDoc,
 } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 
 const ProductsBody = () => {
+  const { user, role } = useAuth();
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
   const productsRef = collection(db, "products");
+
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
-  const { user } = useAuth();
 
   const getProducts = async () => {
     const storedProducts = await getDocs(productsRef);
@@ -35,7 +37,7 @@ const ProductsBody = () => {
   useEffect(() => {
     getProducts();
   }, []);
- 
+
   //retorna la suma del acumulador + la cantidad de cada prodcuto
   // current.quantity es para acceder a la cantidad de cada producto
   const quantity = cart.reduce((acum, current) => {
@@ -76,11 +78,12 @@ const ProductsBody = () => {
 
   const addtimeHandler = (e) => {
     setAddTime(e.target.value);
+    console.log(role);
   };
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      {user && user.email === "admin@admin.com" ? (
+      {user && role === "admin" ? (
         <div>
           <div className="setdelay">
             <p>Order Delay: </p>
