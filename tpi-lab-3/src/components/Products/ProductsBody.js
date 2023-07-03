@@ -35,7 +35,9 @@ const ProductsBody = () => {
   useEffect(() => {
     getProducts();
   }, []);
-
+ 
+  //retorna la suma del acumulador + la cantidad de cada prodcuto
+  // current.quantity es para acceder a la cantidad de cada producto
   const quantity = cart.reduce((acum, current) => {
     return acum + current.quantity;
   }, 0);

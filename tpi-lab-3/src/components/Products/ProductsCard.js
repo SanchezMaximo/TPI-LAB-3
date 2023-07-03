@@ -37,7 +37,8 @@ const ProductsCard = ({
 
   const removeItem = (id) => {
     setCart((currentItem) => {
-      if (currentItem.find((item) => item.id === id)?.quantity === 1) {
+      if (currentItem.find((item) => item.id === id)?.quantity === 1) { 
+         //si el item.id es igual al id que le pasamos por parametro se extrae la propiedad .quantity y si es igual a 1 se filtra y se borra 
         return currentItem.filter((item) => item.id !== id);
       } else {
         return currentItem.map((item) => {
@@ -53,6 +54,8 @@ const ProductsCard = ({
 
   const getQuantityById = (id) => {
     return cart.find((item) => item.id === id)?.quantity || 0;
+    //busca cuantos elementos fueron seleccionados con respecto a un solo producto
+    //si retorna un valor se extrae la cantidad y si no es cero
   };
 
   const quantityPerItem = getQuantityById(id);
