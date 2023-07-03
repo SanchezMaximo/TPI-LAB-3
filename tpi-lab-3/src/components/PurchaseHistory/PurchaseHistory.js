@@ -35,7 +35,7 @@ function PurchaseHistory() {
 
   return (
     <div>
-      <h3>Purchase History</h3>
+      <h3 className="purchaseHistory">Purchase History</h3>
       {historyUser.length === 0 ? (
         <p>No purchase history available.</p>
       ) : (

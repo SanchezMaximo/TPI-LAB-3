@@ -32,7 +32,7 @@ const NavBar = ({ children }) => {
             {MenuItems.map((item, index) => {
               return (
                 <li key={index + item}>
-                  <Link to={item.url}>
+                  <Link to={item.url}  onClick={handleClick} >
                     <i className={item.icon}></i>
                     {item.title}
                   </Link>
