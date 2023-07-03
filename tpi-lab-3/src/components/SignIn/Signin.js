@@ -29,7 +29,6 @@ const SigIn = () => {
       navigate("/");
     } catch (errors) {
       ToastError(errors);
-      toast.error(errors.code);
     }
   };
 
