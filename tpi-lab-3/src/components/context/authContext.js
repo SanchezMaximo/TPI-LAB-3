@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
       return toast.error("Missing password");
     if (errors.code === "auth/weak-password")
       return toast.error("Password should be 6 or longer digits");
-    if (errors === "auth/email-already-in-use")
+    if (errors.code === "auth/email-already-in-use")
       return toast.error("Email already in use");
     if (errors.code === "auth/user-not-found")
       return toast.error("User not found");
