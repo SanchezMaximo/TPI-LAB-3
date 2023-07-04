@@ -17,12 +17,13 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../Loading/Loader";
 
 const ProductsBody = () => {
   const { user, role } = useAuth();
   const [cart, setCart, addTime, setAddTime] = useContext(CartContext);
   const productsRef = collection(db, "products");
-
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
   const { isDarkMode } = useContext(ThemeContext);
@@ -32,6 +33,7 @@ const ProductsBody = () => {
     setProducts(
       storedProducts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
     );
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -106,19 +108,22 @@ const ProductsBody = () => {
           Cart items : <span className="cartCount">{quantity}</span>
         </Link>
       </div>
-      <div className="productsList">
-        {products.map((product) => {
-          return (
-            <ProductsCard
-              key={product.id}
-              {...product}
-              product={product}
-              setDataToEdit={setDataToEdit}
-              unlistItem={unlistItem}
-            />
-          );
-        })}
-      </div>
+      { loading ? (<Loader />) : 
+      (
+          <div className="productsList">
+            {products.map((product) => {
+              return (
+                <ProductsCard
+                  key={product.id}
+                  {...product}
+                  product={product}
+                  setDataToEdit={setDataToEdit}
+                  unlistItem={unlistItem}
+                />
+              );
+            })}
+          </div>
+      )}
       <ToastContainer
         position="top-right"
         autoClose={5000}
