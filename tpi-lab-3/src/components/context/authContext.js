@@ -37,8 +37,10 @@ export function AuthProvider({ children }) {
   const getUserRole = async (currentUser) => {
     const userC = doc(db, "users", currentUser.email);
     const userR = await getDoc(userC);
-    const userData = userR.data();
-    setRole(userData.role);
+    if (userR.exists()) {
+      const userData = userR.data();
+      setRole(userData.role);
+    }
   };
 
   const ToastError = (errors) => {

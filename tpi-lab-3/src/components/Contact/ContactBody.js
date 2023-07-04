@@ -11,11 +11,11 @@ const ContactBody = () => {
         <h2 className='contactUs'>Contact Us</h2>
         <div className='infoContact'>
           <h4>Phone</h4>
-          <p>(212)9427</p>
+          <p>(341)942753</p>
         </div> 
         <div className='locationContact'>
           <h4>Location</h4>
-          <p>Ashton New Rd, Manchester M11 3FF, Reino Unido.</p>
+          <p>Av.Carballo 148, S2000 Rosario, Santa Fe</p>
         </div>
         <div className='hoursContact'>
               <h4>Hours</h4>

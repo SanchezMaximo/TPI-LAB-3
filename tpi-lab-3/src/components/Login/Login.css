@@ -17,7 +17,7 @@
   margin: 40px;
   padding: 30px;
   border-radius: 10px;
-  background: #c1a08b;
+  background-color:  #fdf9f4cf;
 }
 
 #formLogin.login-form.dark {
@@ -66,7 +66,7 @@
   padding: 15px;
   border-radius: 10px;
   font-size: 16px;
-  background: #c1a08b;
+  background-color:  #fdf9f4cf;
 }
 
 .loginRegistration.dark {
