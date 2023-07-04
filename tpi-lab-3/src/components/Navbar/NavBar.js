@@ -42,7 +42,8 @@ const NavBar = ({ children }) => {
 
             {user != null ? (
               <div className="registrationNavBar">
-                <p>Welcome {user.email.split("@")[0]}</p>
+                <p className={isDarkMode ? "darkWelcome" : "lightWelcome"}>
+                Welcome, {user.email.split("@")[0]}!</p>
                 <button
                   className={isDarkMode ? "buttonHistoryDark" : "buttonHistoryLight"}
                   onClick={() => navigate("/purchases")}

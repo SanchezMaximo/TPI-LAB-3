@@ -100,7 +100,7 @@ const ProductsBody = () => {
 
       <div className="cartItems">
         <Link to={"/cart"} className="linkCart">
-          Cart items: <span className="cartCount">{quantity}</span>
+          Cart items : <span className="cartCount">{quantity}</span>
         </Link>
       </div>
       <div className="productsList">

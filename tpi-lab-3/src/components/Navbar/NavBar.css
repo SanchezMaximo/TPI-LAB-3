@@ -11,7 +11,11 @@ nav {
   background-color: rgb(24, 24, 24);
   color: white;
 }
-
+.darkWelcome ,
+.lightWelcome{
+  margin-right: 4px;  
+  color: #1b2340;
+}
 .light {
   background-color: #88481d;
   color: #fff;
@@ -25,10 +29,10 @@ nav {
   align-items: center;
   justify-content: center;
   position: relative;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   padding: 0px 0px 0px 30px;
-  margin: 0px 0px 16px;
+  margin: 0px 0px 16px; 
   font-family: 'Poppins', sans-serif;
 }
 
