@@ -6,11 +6,13 @@ import "./Signin.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 const SigIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const { signup, ToastError } = useAuth();
+  const { signup, ToastError, user } = useAuth();
   const navigate = useNavigate();
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -21,11 +23,21 @@ const SigIn = () => {
   const passwordChangedHandler = (event) => {
     setPass(event.target.value);
   };
+
+  const CreateUser = async () => {
+    const userRef = doc(db, "users", email);
+    const userDoc = await getDoc(userRef);
+
+    if (!userDoc.exists()) {
+      await setDoc(userRef, { email: email, role: "user" });
+    }
+  };
   //valida el registro del usuario(Si existe, si contiene contraseña valida y email valido)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signup(email, pass);
+      CreateUser(email);
       navigate("/");
     } catch (errors) {
       ToastError(errors);
