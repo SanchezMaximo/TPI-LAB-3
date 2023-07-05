@@ -6,13 +6,17 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { db } from "./firebaseConfig";
 import { useAuth } from "./context/authContext";
+import { ThemeContext } from "./context/ThemeContext";
+import "./PagUsuario.css";
 
 function PagUsuario() {
   const [userList, setUserList] = useState([]);
   const { user } = useAuth();
+  const { isDarkMode } = useContext(ThemeContext);
+
   const getUsers = async () => {
     const userRef = collection(db, "users");
     const userDocs = await getDocs(userRef);
@@ -42,14 +46,13 @@ function PagUsuario() {
     getUsers();
   };
   return (
-    <div>
+    <div className="users">
       {userList.map((list) => (
-        <div key={list.id}>
+        <div key={list.id} className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}>
           <p>{list.email}</p>
           <p>{list.role}</p>
           {list.email !== "elprimeradmin@gmail.com" && (
-            <button onClick={() => changeRole(list.email, list.role)}>
-              {" "}
+            <button className={isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"} onClick={() => changeRole(list.email, list.role)}>
               Change Role
             </button>
           )}

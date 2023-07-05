@@ -14,6 +14,7 @@ const storeProdToEdit = {
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(storeProdToEdit);
   const { isDarkMode } = useContext(ThemeContext);
+  const [invalidFields, setInvalidFields] = useState({});
   useEffect(() => {
     if (dataToEdit) {
       setForm(dataToEdit);
@@ -32,8 +33,23 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.type || !form.price) {
+    if (!form.name || !form.type || !form.price || !form.imgUrl) {
+      setInvalidFields({
+        name: !form.name,
+        type: !form.type,
+        price: !form.price,
+        imgUrl: !form.imgUrl,
+      })
       toast.error("Data can't be empty");
+      return;
+    } else if (!form.name || !form.type || form.price < 0|| !form.imgUrl) {
+      setInvalidFields({
+        name: !form.name,
+        type: !form.type,
+        price: form.price < 0,
+        imgUrl: !form.imgUrl,
+      })
+      toast.error("Price must be equal to or greater than 0");
       return;
     }
 
@@ -48,6 +64,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   const handleReset = (e) => {
     setForm(storeProdToEdit);
+    setInvalidFields(false);
     setDataToEdit(null);
   };
 
@@ -55,7 +72,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     <div id="form" className={`form ${isDarkMode ? "dark" : "light"}`}>
       <form onSubmit={handleSubmit}>
         <input
-          className="inputName"
+         className={invalidFields.name ?  "invalid-field" : "inputName"}
           type="text"
           name="name"
           placeholder="nombre"
@@ -63,7 +80,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.name}
         />
         <input
-          className="inputType"
+          className={invalidFields.type ? "invalid-field" : "inputType"}
           type="text"
           name="type"
           placeholder="tipo"
@@ -71,7 +88,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.type}
         />
         <input
-          className="inputPrice"
+          className={invalidFields.price ? "invalid-field" : "inputPrice"}
           type="number"
           name="price"
           placeholder="precio"
@@ -79,7 +96,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.price}
         />
         <input
-          className="inputImg"
+          className={invalidFields.imgUrl ? "invalid-field" : "inputImg"}
           type="text"
           name="imgUrl"
           placeholder="imagenUrl"

@@ -7,8 +7,15 @@
 
 .purchaseHistory {
   color: white;
+  margin: 5px;
+  padding: 5px;
 }
 
 .groupContainer {
   flex: 1 1 200px;
+}
+
+#titleP{
+  color: white;
+  margin: 10px;
 }

@@ -38,30 +38,35 @@ function PurchaseHistory() {
 
   return (
     <div>
-      <h3 className="purchaseHistory">Purchase History</h3>
       {loading ? (<Loader />) :
       historyUser.length === 0 ? 
-      (
-        <p>No purchase history available.</p>
+      ( 
+        <>
+          <h3 className="purchaseHistory">Purchase History</h3>
+          <p>No purchase history available.</p>
+        </>
       ) : 
       (
-        <div className="purchaseGroups">
-              {groupByTime().map((group, index) => (
-              <div key={index} className="groupContainer">
-                <h3 id="titleP">Purchase {index + 1}</h3>
-                {group.map((record) => (
-                  <PHCard
-                    key={record.id}
-                    name={record.name}
-                    price={record.price}
-                    quantity={record.quantity}
-                    time={record.time}
-                    userB={record.user}
-                  />
-                ))}
-              </div>
-            ))}
-        </div>
+        <>
+          <h3 className="purchaseHistory">Purchase History</h3>
+          <div className="purchaseGroups">
+                {groupByTime().map((group, index) => (
+                <div key={index} className="groupContainer">
+                  <h4 id="titleP">Purchase {index + 1}</h4>
+                  {group.map((record) => (
+                    <PHCard
+                      key={record.id}
+                      name={record.name}
+                      price={record.price}
+                      quantity={record.quantity}
+                      time={record.time}
+                      userB={record.user}
+                    />
+                  ))}
+                </div>
+              ))}
+          </div>
+        </>
       )}
     </div>
   );

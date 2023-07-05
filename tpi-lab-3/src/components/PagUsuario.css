@@ -1,0 +1,44 @@
+.users{
+margin: 5px;
+}
+.cardUsersLight{
+  background-color: #fdf9f4cf;
+  color: #222;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  display: inline-grid;
+  position: relative;
+}
+
+
+.cardUsersDark {
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    display: inline-grid;
+    background-color: rgba(0, 0, 0, 0.233);
+    color: white;
+    border-style: solid;
+  }
+  
+.btnChangeRoleLight{
+    border-radius: 5px;
+    color: #222;
+    background-color:  rgb(136, 72, 29);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+.btnChangeRoleDark{
+    border-radius: 5px;
+    color: #222;
+    background-color:#ffffffce;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
