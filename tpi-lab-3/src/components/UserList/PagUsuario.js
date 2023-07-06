@@ -27,24 +27,29 @@ function PagUsuario() {
     getUsers();
   }, []);
 
+  const confirmChangeRole = (email, currentRole) => {
+    const newRole = currentRole === "user" ? "admin" : "user";
+    const confirmation = window.confirm(
+      `Are you sure that ${email} should be changed to ${newRole}?`
+    );
+
+    if (confirmation) {
+      changeRole(email, newRole);
+    }
+  };
+
   const changeRole = async (email, role) => {
     const userDoc = doc(db, "users", email);
 
-    if (role === "user") {
-      const newrole = {
-        email: email,
-        role: "admin",
-      };
-      await updateDoc(userDoc, newrole);
-    } else {
-      const newrole = {
-        email: email,
-        role: "user",
-      };
-      await updateDoc(userDoc, newrole);
-    }
+    const newRoleData = {
+      email: email,
+      role: role,
+    };
+
+    await updateDoc(userDoc, newRoleData);
     getUsers();
   };
+
   return (
     <div>
       {userList.map((list) => (
@@ -53,13 +58,14 @@ function PagUsuario() {
           className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}
         >
           <p>{list.email}</p>
-          <p className={ list.role === "admin" ? "roleCard" : ""}>{list.role}</p>
-          {user.email === "dueño@gmail.com" ? (
+          <p className={list.role === "admin" ? "roleCard" : ""}>{list.role}</p>
+          {user.email === "dueño@gmail.com" &&
+          list.email !== "dueño@gmail.com" ? (
             <button
               className={
                 isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"
               }
-              onClick={() => changeRole(list.email, list.role)}
+              onClick={() => confirmChangeRole(list.email, list.role)}
             >
               Change Role
             </button>
