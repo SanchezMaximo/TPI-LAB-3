@@ -71,7 +71,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <div id="form" className={`form ${isDarkMode ? "dark" : "light"}`}>
       <form onSubmit={handleSubmit}>
-        {form.id !== null ? <p>Editing: </p> : <p>New Item: </p>}
+        {form.id !== null ? <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>Editing: </p> : <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>New Item: </p>}
         <input
           className={invalidFields.name ? "invalid-field" : "inputName"}
           type="text"
