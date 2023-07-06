@@ -8,13 +8,13 @@ import NotFound from "./routes/NotFound";
 import SigIn from "./components/SignIn/Signin";
 import LogIn from "./components/Login/Login";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { ProtectedRouteAdmin } from "./components/ProtectedRoute/ProtectedRouteAdmin";
 import { UserActive } from "./components/ProtectedRoute/UserActive";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "./components/context/ThemeContext";
 import PurchaseHistory from "./components/PurchaseHistory/PurchaseHistory";
 import PagUsuario from "./components/UserList/PagUsuario";
-
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -35,7 +35,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-       
+
         <Route
           path="/login"
           element={
@@ -72,9 +72,9 @@ function App() {
         <Route
           path="/userList"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <PagUsuario />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
       </Routes>
