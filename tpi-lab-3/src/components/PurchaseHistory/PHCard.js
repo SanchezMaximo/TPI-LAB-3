@@ -5,7 +5,7 @@ import { useAuth } from "../context/authContext";
 
 function PHCard({ name, price, quantity, time, userB }) {
   const { isDarkMode } = useContext(ThemeContext);
-  const { user } = useAuth();
+  const { user, role } = useAuth();
   const trimmedTime = time.substring(0, time.indexOf("GMT") - 1);
   return (
     <div
@@ -16,7 +16,7 @@ function PHCard({ name, price, quantity, time, userB }) {
       <div>Quantity: {quantity}</div>
       <div>Price Per Unit: ${price}</div>
       <div>Time: {trimmedTime}</div>
-      {user.email === "admin@admin.com" && <p>User: {userB}</p>}
+      {role === "admin" && <p>User: {userB}</p>}
     </div>
   );
 }

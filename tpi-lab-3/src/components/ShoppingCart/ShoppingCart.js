@@ -41,7 +41,7 @@ const ShoppingCart = () => {
         quantity: element.quantity,
         time: pickupTime.toString(),
       });
-      addDoc(collection(db, "purchases", "admin@admin.com", "userPurchases"), {
+      addDoc(collection(db, "purchases", "adminRecord", "usersPurchases"), {
         user: user.email,
         name: element.name,
         price: element.price,
