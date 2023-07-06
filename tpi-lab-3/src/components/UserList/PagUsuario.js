@@ -54,7 +54,7 @@ function PagUsuario() {
         >
           <p>{list.email}</p>
           <p>{list.role}</p>
-          {role === "admin" && list.email !== "dueño@gmail.com" ? (
+          {user.email === "dueño@gmail.com" ? (
             <button
               className={
                 isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"
