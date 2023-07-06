@@ -11,12 +11,13 @@ form {
   margin: 10px;
   border-radius: 5px;
 }
+
 #form.dark {
   background-color: rgb(58, 58, 58);
 }
 
 #form.light {
-  background: #be5814;
+  background-color: #793a1c;
 }
 
 .inputImg,

@@ -31,15 +31,12 @@
 }
 
 .presentation{
-    background: rgb(136, 72, 29);
-    box-shadow: 0 5px 15px rgb(67, 35, 14);
+    background: #793a1c;
     border-radius: 4px;
     padding: 10px;
 }
 
 #AboutBody.dark .presentation{
     background:  rgb(24, 24, 24);
-    box-shadow: 0 1px 2px #fff;
-    border-radius: 4px;
     padding: 10px;
 }

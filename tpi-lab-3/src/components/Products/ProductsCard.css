@@ -9,7 +9,7 @@
 }
 
 #ProductCard.dark {
-  background-color: rgba(0, 0, 0, 0.233);
+  background-color: #2b2b2a;
   color: white;
 }
 
@@ -51,7 +51,7 @@
 
 .item-quantity {
   color: #fff;
-  background-color: #87481d;
+  background-color: #793a1c;
   display: flex;
   justify-content: center;
   border-radius: 20px;

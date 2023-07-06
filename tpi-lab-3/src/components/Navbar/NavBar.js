@@ -16,7 +16,10 @@ const NavBar = ({ children }) => {
   const handleClick = () => {
     setCollapsed(!collapsed);
   };
-
+  const handleLinkClick = (url) => {
+    setCollapsed(!collapsed);
+    navigate(url);
+  };
   const handleLogout = async () => {
     await logout();
   };
@@ -32,7 +35,7 @@ const NavBar = ({ children }) => {
             {MenuItems.map((item, index) => {
               return (
                 <li key={index + item}>
-                  <Link to={item.url} onClick={handleClick}>
+                  <Link to={item.url} onClick={() => handleLinkClick()}>
                     <i className={item.icon}></i>
                     {item.title}
                   </Link>
@@ -50,7 +53,7 @@ const NavBar = ({ children }) => {
                     className={
                       isDarkMode ? "buttonUserListDark" : "buttonUserListLight"
                     }
-                    onClick={() => navigate("/userList")}
+                    onClick={() => handleLinkClick("/userList")}
                   >
                     <svg
                       className="iconUserList"
@@ -66,7 +69,7 @@ const NavBar = ({ children }) => {
                   className={
                     isDarkMode ? "buttonHistoryDark" : "buttonHistoryLight"
                   }
-                  onClick={() => navigate("/purchases")}
+                  onClick={() => handleLinkClick("/purchases")}
                 >
                   <svg
                     className="iconHistory"
@@ -83,7 +86,7 @@ const NavBar = ({ children }) => {
               </div>
             ) : (
               <div className="registrationNavBar">
-                <li className="buttonLogIn" onClick={() => navigate("/login")}>
+                <li className="buttonLogIn" onClick={() => handleLinkClick("/login")}>
                   <svg
                     className="iconLogIn"
                     width="30"
@@ -98,7 +101,7 @@ const NavBar = ({ children }) => {
                 </li>
                 <li
                   className="buttonSignUp"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => handleLinkClick("/signup")}
                 >
                   <svg
                     className="iconLogIn"

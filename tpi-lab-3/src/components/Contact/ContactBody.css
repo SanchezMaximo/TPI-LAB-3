@@ -9,16 +9,12 @@
   }
   
 .contactUs{
-  background: #88481d;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  background: #793a1c;
   padding: 10px;
 }
 
 .contactBody.dark .contactUs{
   background: rgb(24, 24, 24);
-  box-shadow: 0 1px 3px #fff;
-  border-radius: 4px;
   padding: 10px;
 }
 

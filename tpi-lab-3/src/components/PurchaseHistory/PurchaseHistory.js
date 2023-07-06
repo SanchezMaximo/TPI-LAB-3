@@ -57,7 +57,7 @@ function PurchaseHistory() {
       ) : historyUser.length === 0 ? (
         <>
           <h3 className="purchaseHistory">Purchase History</h3>
-          <p>No purchase history available.</p>
+          <p className="textNoPurchase">No purchase history available.</p>
         </>
       ) : (
         <>

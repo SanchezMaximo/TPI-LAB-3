@@ -7,7 +7,7 @@
 }
 
 .login-container.dark {
-  background-color: #2b2b2a;
+  background: #161615;
 }
 
 #formLogin.login-form {
@@ -21,7 +21,7 @@
 }
 
 #formLogin.login-form.dark {
-  background: #161615;
+    background-color: #2b2b2a
 }
 
 .login-label {
@@ -70,5 +70,5 @@
 }
 
 .loginRegistration.dark {
-  background: #161615;
+  background-color: #2b2b2a;
 }

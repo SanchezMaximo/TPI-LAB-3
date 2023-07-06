@@ -7,7 +7,7 @@
 }
 
 .signIn-container.dark {
-  background-color: #2b2b2a;
+  background: #161615;
 }
 
 #formSignin.signIn-form {
@@ -21,7 +21,7 @@
 }
 
 #formSignin.signIn-form.dark {
-  background: #161615;
+  background-color: #2b2b2a;
 }
 
 .signIn-label {
@@ -70,5 +70,5 @@
 }
 
 .signInRegistration.dark {
-  background: #161615;
+  background-color: #2b2b2a;
 }

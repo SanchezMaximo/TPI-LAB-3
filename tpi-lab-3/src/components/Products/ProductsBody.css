@@ -4,6 +4,7 @@
   list-style: none;
   align-items: center;
   padding: 20px;
+  margin: 0px 78px 0px 0px;
 }
 
 .setdelay {
@@ -29,16 +30,17 @@
 
 .setdelay p{
   margin: 0;
+  padding: 5px;
 }
 .dark {
-  background-color: #2b2b2a;
+  background: #161615;
 }
 
 #form.light{
-  background: rgb(136, 72, 29);
-  box-shadow: 0 3px 10px rgb(67, 35, 14);
+  background:#fdf9f4cf;
   border-radius: 6px;
-  margin: 20px;
+  margin: 50px;
+
 }
 
 #form.dark{
@@ -64,11 +66,15 @@
 
 .linkCart {
   text-decoration: none;
+  color: #fdf9f4cf;;
+}
+.linkCart .cartCount {
+  text-decoration: none;
   color: #222;
 }
 .linkCart:hover {
   text-decoration: none;
-  color: #fdf9f4cf;
+  color: #222;
 }
 .linkCart:hover .cartCount {
   text-decoration: none;
@@ -79,8 +85,12 @@
   color: #fff;
 }
 .dark .cartCount{
-  color: #222;
+  background-color: #2b2b2a;
+  color: #fff;
 }
 .dark .linkCart:hover{
   color: #afa8a1cf;
+}
+.dark .linkCart:hover .cartCount{
+  color: #fff;
 }

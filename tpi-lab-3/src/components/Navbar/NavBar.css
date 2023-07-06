@@ -41,7 +41,7 @@ nav {
   transition: all 3000s ease-in-out; 
 }
 .light {
-  background-color: #87481d;
+  background-color: #793a1c;
   color: #fff;
 }
 
@@ -124,7 +124,7 @@ nav {
   border-color: #fff;
   border-radius: 10px;
   color: #fff;
-  background: #87481d;
+  background: #793a1c;
 }
 
 .buttonHistoryDark,
@@ -148,7 +148,7 @@ nav {
   border-color: #fff;
   border-radius: 10px;
   color: #fff;
-  background: #87481d;
+  background: #793a1c;
 }
 
 .buttonLogout:hover {
@@ -182,7 +182,7 @@ nav {
 .buttonSignUp{
   position: relative;
   list-style:none;
-  margin-left: 15px;
+  margin-left: 10px;
   border-radius: 10px;
   color: #fff;
   text-decoration: none;
@@ -205,14 +205,18 @@ nav {
 #NavBar.dark .buttonLogIn:hover,
 #NavBar.dark .buttonSignUp:hover{
   background: #fff;
-  color: #1b2340;
+  color:#1b2340;
+  transition: all 0.3s ease-in-out;
+}
+#NavBar.dark .buttonLogIn:hover .iconLogIn,
+#NavBar.dark .buttonSignUp:hover .iconLogIn
+{
+  fill:#1b2340;
   transition: all 0.3s ease-in-out;
 }
 
 #NavBar.dark .iconLogIn{
-  background-color: #fff;
-  border-radius: 5px;
-  margin-right: 5px;
+  fill:white;
 }
 
 
@@ -222,7 +226,7 @@ nav {
   justify-content: center;
   font-size: 30px;
   border: none;
-  background-color: #87481d;
+  background-color: #793a1c;
 }
 .sun
 {
@@ -334,6 +338,11 @@ nav {
     border-radius: 5px;
     margin-right: 5px;
   }
+  #NavBar.dark .buttonLogIn .iconLogIn,
+  #NavBar.dark .buttonSignUp .iconLogIn
+  {
+  fill:#1b2340;
+  } 
 
   .logo{
     color: white;
