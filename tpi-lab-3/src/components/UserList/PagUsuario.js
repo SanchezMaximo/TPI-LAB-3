@@ -7,14 +7,14 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
-import { db } from "./firebaseConfig";
-import { useAuth } from "./context/authContext";
-import { ThemeContext } from "./context/ThemeContext";
+import { db } from "../firebaseConfig";
+import { useAuth } from "../context/authContext";
+import { ThemeContext } from "../context/ThemeContext";
 import "./PagUsuario.css";
 
 function PagUsuario() {
   const [userList, setUserList] = useState([]);
-  const { user } = useAuth();
+  const { user, role } = useAuth();
   const { isDarkMode } = useContext(ThemeContext);
 
   const getUsers = async () => {
@@ -51,11 +51,11 @@ function PagUsuario() {
         <div key={list.id} className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}>
           <p>{list.email}</p>
           <p>{list.role}</p>
-          {list.email !== "elprimeradmin@gmail.com" && (
+          {role  === "admin" && list.email !== "elprimeradmin@gmail.com"  ? (
             <button className={isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"} onClick={() => changeRole(list.email, list.role)}>
               Change Role
-            </button>
-          )}
+            </button>) : ("")
+          }
         </div>
       ))}
     </div>

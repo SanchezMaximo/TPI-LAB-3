@@ -13,7 +13,8 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "./components/context/ThemeContext";
 import PurchaseHistory from "./components/PurchaseHistory/PurchaseHistory";
-import PagUsuario from "./components/PagUsuario";
+import PagUsuario from "./components/UserList/PagUsuario";
+
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -34,7 +35,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/userlist" element={<PagUsuario />} />
+       
         <Route
           path="/login"
           element={
@@ -65,6 +66,14 @@ function App() {
           element={
             <ProtectedRoute>
               <ShoppingCart />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/userList"
+          element={
+            <ProtectedRoute>
+              <PagUsuario />
             </ProtectedRoute>
           }
         />
