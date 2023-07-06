@@ -39,16 +39,16 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
         type: !form.type,
         price: !form.price,
         imgUrl: !form.imgUrl,
-      })
+      });
       toast.error("Data can't be empty");
       return;
-    } else if (!form.name || !form.type || form.price < 0|| !form.imgUrl) {
+    } else if (!form.name || !form.type || form.price < 0 || !form.imgUrl) {
       setInvalidFields({
         name: !form.name,
         type: !form.type,
         price: form.price < 0,
         imgUrl: !form.imgUrl,
-      })
+      });
       toast.error("Price must be equal to or greater than 0");
       return;
     }
@@ -71,8 +71,9 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <div id="form" className={`form ${isDarkMode ? "dark" : "light"}`}>
       <form onSubmit={handleSubmit}>
+        {form.id !== null ? <p>Editing: </p> : <p>New Item: </p>}
         <input
-         className={invalidFields.name ?  "invalid-field" : "inputName"}
+          className={invalidFields.name ? "invalid-field" : "inputName"}
           type="text"
           name="name"
           placeholder="nombre"
