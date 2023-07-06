@@ -46,14 +46,14 @@ function PagUsuario() {
     getUsers();
   };
   return (
-    <div className="users">
+    <div>
       {userList.map((list) => (
         <div
           key={list.id}
           className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}
         >
           <p>{list.email}</p>
-          <p>{list.role}</p>
+          <p className={ list.role === "admin" ? "roleCard" : ""}>{list.role}</p>
           {user.email === "dueño@gmail.com" ? (
             <button
               className={
