@@ -48,14 +48,24 @@ function PagUsuario() {
   return (
     <div className="users">
       {userList.map((list) => (
-        <div key={list.id} className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}>
+        <div
+          key={list.id}
+          className={isDarkMode ? "cardUsersDark" : "cardUsersLight"}
+        >
           <p>{list.email}</p>
           <p>{list.role}</p>
-          {role  === "admin" && list.email !== "elprimeradmin@gmail.com"  ? (
-            <button className={isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"} onClick={() => changeRole(list.email, list.role)}>
+          {role === "admin" && list.email !== "dueño@gmail.com" ? (
+            <button
+              className={
+                isDarkMode ? "btnChangeRoleDark" : "btnChangeRoleLight"
+              }
+              onClick={() => changeRole(list.email, list.role)}
+            >
               Change Role
-            </button>) : ("")
-          }
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       ))}
     </div>

@@ -95,12 +95,12 @@ const ProductsCard = ({
         </button>
       ) : (
         <button className="productPlusButton" onClick={() => addToCart()}>
-          + add to more
+          + add another
         </button>
       )}
       {quantityPerItem > 0 && (
         <button className="productMinusButton" onClick={() => removeItem(id)}>
-          subtract item
+          - remove one
         </button>
       )}
     </div>

@@ -1,7 +1,13 @@
-.light{
-    color: black;
+.light {
+  color: black;
 }
 
-.dark{
-    color:white;
+.dark {
+  color: white;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
