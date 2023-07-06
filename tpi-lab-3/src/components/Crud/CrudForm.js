@@ -71,12 +71,20 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <div id="form" className={`form ${isDarkMode ? "dark" : "light"}`}>
       <form onSubmit={handleSubmit}>
-        {form.id !== null ? <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>Editing: </p> : <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>New Item: </p>}
+        {form.id !== null ? (
+          <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>
+            Editing:{" "}
+          </p>
+        ) : (
+          <p className={isDarkMode ? "editingFormDark" : "editingFormLight"}>
+            New Item:{" "}
+          </p>
+        )}
         <input
           className={invalidFields.name ? "invalid-field" : "inputName"}
           type="text"
           name="name"
-          placeholder="nombre"
+          placeholder="name"
           onChange={handleChange}
           value={form.name}
         />
@@ -84,7 +92,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           className={invalidFields.type ? "invalid-field" : "inputType"}
           type="text"
           name="type"
-          placeholder="tipo"
+          placeholder="type"
           onChange={handleChange}
           value={form.type}
         />
@@ -92,7 +100,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           className={invalidFields.price ? "invalid-field" : "inputPrice"}
           type="number"
           name="price"
-          placeholder="precio"
+          placeholder="price"
           onChange={handleChange}
           value={form.price}
         />
@@ -104,11 +112,11 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           onChange={handleChange}
           value={form.imgUrl}
         />
-        <input className="inputSend" type="submit" value="enviar" />
+        <input className="inputSend" type="submit" value="Send" />
         <input
           className="inputClean"
           type="reset"
-          value="limpiar"
+          value="Clear"
           onClick={handleReset}
         />
       </form>
