@@ -89,6 +89,8 @@
         top:20%;
         transition: 1s ease-in-out;
     }
+  
+    .homePage-text-dark ,
     .homePage-text h1{
         font-size: 2rem;   
         background: #793a1c;
@@ -96,6 +98,7 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0.4px 1px 0px #fff;
     }
+    .homePage-text-dark ,
     .homePage-text p{
         font-size: 1.2rem;
         background: #fff;
@@ -103,6 +106,8 @@
         -webkit-text-fill-color: transparent; 
  
     } 
+  
+   
     /* .homePage-text .show{
         padding: 0.4rem 1.1rem;
         border-radius: 6px;
