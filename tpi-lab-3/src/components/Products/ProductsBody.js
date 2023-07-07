@@ -71,6 +71,16 @@ const ProductsBody = () => {
     getProducts();
   };
 
+  const confirmUnlistItem = (id, name) => {
+    const confirmation = window.confirm(
+      `Are you sure you want to delete "${name}"?`
+    );
+
+    if (confirmation) {
+      unlistItem(id);
+    }
+  };
+
   const unlistItem = async (id) => {
     const prodDoc = doc(db, "products", id);
     await deleteDoc(prodDoc);
@@ -108,21 +118,22 @@ const ProductsBody = () => {
           Cart items : <span className="cartCount">{quantity}</span>
         </Link>
       </div>
-      { loading ? (<Loader />) : 
-      (
-          <div className="productsList">
-            {products.map((product) => {
-              return (
-                <ProductsCard
-                  key={product.id}
-                  {...product}
-                  product={product}
-                  setDataToEdit={setDataToEdit}
-                  unlistItem={unlistItem}
-                />
-              );
-            })}
-          </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="productsList">
+          {products.map((product) => {
+            return (
+              <ProductsCard
+                key={product.id}
+                {...product}
+                product={product}
+                setDataToEdit={setDataToEdit}
+                unlistItem={confirmUnlistItem}
+              />
+            );
+          })}
+        </div>
       )}
       <ToastContainer
         position="top-right"

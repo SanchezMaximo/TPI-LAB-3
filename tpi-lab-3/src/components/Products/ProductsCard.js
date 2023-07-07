@@ -72,7 +72,7 @@ const ProductsCard = ({
         <>
           <button
             className="productDeleteButton"
-            onClick={() => unlistItem(id)}
+            onClick={() => unlistItem(id, name)}
           >
             Unlist Item
           </button>
