@@ -6,12 +6,7 @@ import "./ContactPage.css"
 const ContactPage = (props) => {
   return (
     <div className={props.ContactPageMid}>
-      <img alt='coffeShop' src={props.contactImg} className={props.imgClass}/>
-
-      <div className="contactPage-text">
-          <h2>{props.title}</h2>
-          <h3>Coffee & Bakery</h3>
-      </div>  
+      <img alt='coffeShop' src={props.contactImg} className={props.imgClass}/> 
     </div> 
   )
 }

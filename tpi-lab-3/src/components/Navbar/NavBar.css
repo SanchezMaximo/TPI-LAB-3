@@ -11,25 +11,12 @@ nav {
   background-color: rgb(24, 24, 24);
   color: white;
 }
-.darkWelcome {
+.darkWelcome,
+.lightWelcome{
   margin-right: 4px;  
   color: #fff;
 }
-.lightWelcome{
-  margin-right: 4px;  
-  color: #222 ;
-}
-.lightWelcome:hover:after{
-    content: "";
-    width: 40px;
-    height: 2px;
-    background:  #222 ;
-    position: absolute;
-    bottom: -5px;
-    left: 5px;
-    transition: all 3000s ease-in-out; 
-  }
-
+.lightWelcome:hover:after,
 .darkWelcome:hover:after{
   content: "";
   width: 40px;
@@ -188,6 +175,7 @@ nav {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
+  fill: #fff;
 }
 
 .buttonLogIn:hover,
@@ -195,24 +183,27 @@ nav {
   background: #fff;
   padding: 50px;
   color: #1b2340;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; 
+  fill:#1b2340;
 }
 #NavBar.dark .buttonLogIn,
 #NavBar.dark .buttonSignUp{
   background-color: rgb(24, 24, 24);
   color: white;
+  transition: all 0.3s ease-in-out; 
+  fill:#1b2340;
 }
 #NavBar.dark .buttonLogIn:hover,
 #NavBar.dark .buttonSignUp:hover{
   background: #fff;
   color:#1b2340;
-  transition: all 0.3s ease-in-out;
+  
 }
 #NavBar.dark .buttonLogIn:hover .iconLogIn,
 #NavBar.dark .buttonSignUp:hover .iconLogIn
 {
   fill:#1b2340;
-  transition: all 0.3s ease-in-out;
+
 }
 
 #NavBar.dark .iconLogIn{
@@ -227,6 +218,7 @@ nav {
   font-size: 30px;
   border: none;
   background-color: #793a1c;
+  padding-bottom: 5px;
 }
 .sun
 {
@@ -236,6 +228,8 @@ nav {
   font-size: 30px;
   border: none;
   background-color: rgb(24, 24, 24);
+  fill:white;
+  padding-bottom: 5px;
 }
 .userList{
   display: flex;
