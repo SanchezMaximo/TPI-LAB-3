@@ -25,7 +25,7 @@ const NavBar = ({ children }) => {
   };
   return (
     <>
-      <nav id="NavBar" className={isDarkMode ? "dark" : "light"}>
+      <nav id="NavBar" className={isDarkMode ? "navdark" : "navlight"}>
         <Link to="/" className="logo">
           Coffee&Bakery
         </Link>

@@ -5,7 +5,7 @@
     flex-direction: column;
     padding: 20px;
     color: #222;
-    background: #8a4b2149;
+    background: #9a5b3c;
   }
 
 .aboutBody.dark{
@@ -31,7 +31,7 @@
 }
 
 .presentation{
-    background: #793a1c;
+    background: #9a5b3c;
     border-radius: 4px;
     padding: 10px;
 }

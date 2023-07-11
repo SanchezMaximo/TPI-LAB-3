@@ -32,6 +32,9 @@
   margin: 0;
   padding: 5px;
 }
+.light{
+  background: #9a5b3c;
+}
 .dark {
   background: #161615;
 }
