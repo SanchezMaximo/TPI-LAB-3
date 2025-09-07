@@ -7,6 +7,7 @@ import { useAuth } from "../context/authContext";
 import "./ShoppingCart.css";
 import PickUpTime from "../PickUpTime/PickUpTime";
 import { ToastContainer, toast } from "react-toastify";
+import { sendOrderConfirmation } from "../../services/email";
 
 const ShoppingCart = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -25,6 +26,9 @@ const ShoppingCart = () => {
   const handleCheckout = async () => {
     if (quantity === 0) {
       return toast.error("No items to buy");
+    }
+    if (!user || !user.email) {
+      return toast.error("No user email found");
     }
     const userPurchasesRef = doc(db, "purchases", user.email);
     const userPurchasesDoc = await getDoc(userPurchasesRef);
@@ -49,6 +53,28 @@ const ShoppingCart = () => {
         time: pickupTime.toString(),
       });
     });
+    // Send confirmation email
+    try {
+      const orderSummary = cart
+        .map(
+          (p) => `- ${p.name} x ${p.quantity} (${p.price} c/u)`
+        )
+        .join("\n");
+      const pickupTimeText = pickupTime ? pickupTime.toString() : "No especificado";
+      const res = await sendOrderConfirmation({
+        toEmail: user.email,
+        orderSummary,
+        pickupTimeText,
+        totalPrice,
+      });
+      if (res && res.status === "skipped") {
+        toast.warn("Pedido registrado. Email no configurado en este entorno.");
+      } else {
+        toast.success("¡Pedido recibido! Te enviamos un correo con instrucciones.");
+      }
+    } catch (err) {
+      toast.error("No pudimos enviar el email. Intentá más tarde.");
+    }
     toast.info("Thank you for your purchase!");
     setCart([]);
   };
